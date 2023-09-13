@@ -305,9 +305,9 @@ Bu genellikle retro tarzda görüntüler oluşturmak için kullanılır. */
 image-rendering: pixelated;
 ```
 
-![1.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/1.png)
+![1](https://github.com/burakkrt/css-advanced-docs/assets/99482906/7734612d-750a-49bd-bfc4-948eb4163128)
+![2](https://github.com/burakkrt/css-advanced-docs/assets/99482906/70862492-f9d7-4f14-9d0e-05e7959b309b)
 
-![2.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/2.png)
 
 ### object-fit
 
