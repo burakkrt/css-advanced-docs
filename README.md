@@ -297,10 +297,10 @@ durumlarında vereceği sonuçları içerir.  */
 /* Tarayıcı, performans ve görüntü kalitesi arasında bir denge sağlamaya çalışır.  */
 image-rendering: auto;
 
-/* Resmin daha net ve pikselsiz görüntülenmesini sağlar. (Sağdaki resim)  */
+/* Resmin daha net ve pikselsiz görüntülenmesini sağlar. (İlk resim)  */
 image-rendering: crisp-edges;
 
-/* Pikselli bir görünümle büyütmeyi veya küçültmeyi sağlar. (Soldaki resim)
+/* Pikselli bir görünümle büyütmeyi veya küçültmeyi sağlar. (İkinci resim)
 Bu genellikle retro tarzda görüntüler oluşturmak için kullanılır. */
 image-rendering: pixelated;
 ```
