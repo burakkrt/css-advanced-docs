@@ -4,13 +4,14 @@
 
 Genellikle direk pixel değeri vererek x ve y ekseni için eşit miktarda yuvarlama yaparız fakat raidus ‘u x ekseni için ayrı y ekseni için ayrı şekilde yuvarlama işlemi yapabiliriz.
 
-![Opera Anlık Görüntü_2023-09-10_223659_www.youtube.com.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-10_223659_www.youtube.com.png)
+![1](https://github.com/burakkrt/css-advanced-docs/assets/99482906/92a80f7c-653c-467f-8409-e7e00272047b)
 
 ```css
 border-radius: 100px / 200px
 ```
 
-![gg.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/gg.png)
+![2](https://github.com/burakkrt/css-advanced-docs/assets/99482906/0a6ea644-4c84-4381-8291-8cb623204863)
+
 
 ### display: inline-flex
 
@@ -72,7 +73,8 @@ filter: grayscale(1) /* tam gri */
 
 Bir elementin renklerini çeşitli derecelerde döndürerek farklı renk efektleri elde etmenizi sağlar.
 
-![Opera Anlık Görüntü_2023-09-12_000055_devdocs.io.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-12_000055_devdocs.io.png)
+![3](https://github.com/burakkrt/css-advanced-docs/assets/99482906/de3060bf-d413-4857-8d55-6c57ea2226be)
+
 
 text ‘in arkaplan rengini vermediğimiz halde hue-rotate ile rengi belirli derece döndürerek elde edebiliriz.
 
