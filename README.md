@@ -334,3 +334,216 @@ object-position: right top; /* sağ üst */
 object-position: 10px 10px; /* x ve y ekseninden 10 pixellik boşluk bırakır; */
 object-position: 50% 20%; /* x ekseninde ortalar y ekseninde yüzde 20 aşağısı. */
 ```
+
+## MEDİA QUERİES
+
+### *@media* (any-hover: hover)
+
+Kullanıcının fare veya işaretçi benzeri bir cihaz kullanarak herhangi bir öğe üzerine işaret koyma yeteneğine sahip olup olmadığını belirler. `hover`  işlemleri uygularken dokunmatik ekran kullananların `hover` özelliğini kullanamazlar. `any-hover` ile sadece öğe üzerine gelebilen cihazlar için `hover` özelliğini kullanmamız daha güvenli olacaktır.
+
+```css
+/* eğer kullancının fare vb. işaretçisi var ise p nin üzerine geldiğinde renk
+maviye dönüşebilir, işaretçisi yok ise hover özelliği kullanılmaz. */
+p{
+	color: black;
+}
+
+@media (any-hover: hover) {
+	p:hover{
+		color: blue;
+	}
+}
+```
+
+### *@media* (pointer , any-pointer)
+
+Kullanıcının hangi türde işaretçi kullandığını belirler. `fine` kullanıcı işaretçisi varsa, `coarse` kullanıcı dokunmatik ekran tarzı bir işaretçi kullanıyor ise. Bu özellik genellikle masaüstü veya mobil için ayrı stillendirmede kullanılır.
+
+```css
+/* Eğer kullanıcı herhangi bir türde işaretçi cihazı kullanıyorsa (PC, Dokunmatik ekran
+@media (any-pointer: fine) {
+	p{
+		color: red;
+	}
+}
+
+/* Eğer sadece fare gibi bir işaretçi cihazı kullanıyor ise */
+@media (pointer: fine) {
+  p{
+		color: blue;
+	}
+}
+```
+
+### *@media* (color)
+
+Kullanıcının renk kapasitesini ve renk destek seviyesini tanımlamak için kullanılır.
+
+```css
+@media (color) {...}  /* Kullanıcının ekranı renkli gösteriyor ise */
+@media (min-color: 8) {...} /* Kullanıcı en az 8 bit renk değerini karşılıyor ise */
+@media (color-index) {...} /* Kullanıcı sadece siyah beyaz renk destekliyor ise */
+```
+
+### *@media* (display-mode)
+
+Kullanıcının web sitesini nereden ve nasıl çalıştığını kontrol eder. Dört farklı değer alır.
+
+```css
+/* Kullanıcı bir tarayıcıdan web sitesine giriyor ise */
+@media (display-mode: browser) {...} 
+/* Kullanıcı bir tarayıcıdan tam ekran modunda web sitesine giriyor ise */
+@media (display-mode: fullscreen) {...} 
+/* Kullanıcı, web sayfasını bir uygulamanın içerisinden görüntülüyor ise */
+@media (display-mode: fullscreen) {...} 
+/* Kullanıcı web sayfasını minimal bir kullanıcı arabirimi (UI) ile görüntülüyor ise*/
+@media (display-mode: minimal-ui) {...} 
+```
+
+### *@media* (hover: hover)
+
+Kullanıcının bir HTML etiketinin üzerine gelip gelemiyeceğini kontrol eder. Mobil cihazlarda fare işaretcisi olmadığı için kullanıcı etiketlerin üzerinde dolaşamaz. normal `:hover` özelliği ile aynıdır fakat hover olabilecek ögelere hover vererek daha kullanışlı kod yazmamızı sağlar.
+
+```css
+/* eğer hover destekleniyor ise p etiketine hover özelliği verir */
+@media (hover: hover) {
+	p:hover {
+		color: red;
+	}
+}
+/* hover desteklensede desteklenmese de hover özelliği verir. */
+p:hover {
+	color: red;
+}
+```
+
+### *@media* (orientation)
+
+Kullanıcının ekranı dikey veya yatay kullanımını belirler. Özellikle mobil cihazlarda ekran döndürme olayları için kullanışlıdır.
+
+```css
+/* Ekran dikey (portre) modunda ise */
+@media (orientation: portrait) {
+  p{
+    color: red;
+  }
+}
+/* Ekran yatay(manzara) modunda ise */
+@media (orientation: landscape) {
+  p{
+    color: blue;
+  }
+}
+```
+
+### Javascript ile dinamik media kontrolü
+
+Javascript ile media sorgularını kontrol edip buna göre aksiyonlar gerçekleştirebiliriz.
+
+```jsx
+const mediaQueryList = window.matchMedia("(orientation: portrait)");
+
+if(mediaQueryList.matches){
+		console.log("Şuan dikey ekrandasın");
+} else {
+		console.log("Şuan yatay ekrandasın");
+}
+```
+
+```jsx
+const responsive = window.matchMedia("(max-width: 768px)");
+
+if(responsive.matches) {
+	div.styled.backgroundColor = "blue";
+}
+```
+
+```jsx
+/* chance işlemi : belirtilen koşul her değiştiğinde kod bloğu çalışır */
+window.matchMedia("(max-width: 390px)").addEventListener("change", (e) => {
+    if(e.matches){
+      console.log("390px 'den küçük ekran");
+    } else {
+      console.log("390px 'den büyük ekran");
+    }
+})
+```
+
+### *@media* (width)
+
+Tarayıcının genişlik veya uzunluk özelliklerine göre aksiyonlar almamızı sağlar. Farklı cihaz ölçeklerine göre stil methodları oluşturmamızı sağlar.
+
+```jsx
+/* tarayıcı genişliği veya uzunluğu belirli bir pixelde ise */
+@media (width: 360px) {
+  div {
+    color: red;
+  }
+}
+@media (height: 360px) {
+  div {
+    color: red;
+  }
+}
+
+/* tarayıcı genişliği veya uzunluğu belirli bir pixelin üzerinde ise */
+@media (min-width: 350px) {
+  div {
+    background: yellow;
+  }
+}
+@media (min-height: 350px) {
+  div {
+    background: yellow;
+  }
+}
+
+/* tarayıcı genişliği veya uzunluğu belirli bir pixelin aşağısında ise */
+@media (max-width: 1920px) {
+  div {
+    border: 2px solid blue;
+  }
+}
+@media (max-height: 1920px) {
+  div {
+    border: 2px solid blue;
+  }
+}
+```
+
+## Translate Methods
+
+### matrix()
+
+Bir öğeyi x,y,z ekseninde döndürmeye yarar. transform ‘un `scale`, `rotate` vb. gibi özelliklerini bir arada kullanma gibi düşünebiliriz. **Güzel animasyonlar elde edilebilir.**
+
+```css
+transform: matrix(a, b, c, d, tx, ty);
+/*
+a, öğenin yatay boyutunu (ölçek faktörü) temsil eder.
+b, öğenin yatay kaydırmasını ve döndürmesini temsil eder.
+c, öğenin dikey kaydırmasını ve döndürmesini temsil eder.
+d, öğenin dikey boyutunu (ölçek faktörü) temsil eder.
+tx, öğenin yatayda konumunu temsil eder.
+ty, öğenin dikeyde konumunu temsil eder.
+*/
+
+transform: matrix(0.5, -0.866, 0.866, 0.5, 100, 100);
+```
+
+### rotate()
+
+Öğeyi x, y veya z ekseninde döndürmeyi sağlar.
+
+```css
+transform: rotateX(90deg);  /* dikey döndürme */
+transform: rotateY(180deg);  /* yatay döndürme */
+transform: rotateZ(180deg);  /* soldan sağa doğru döndürme */
+transform: rotate(180deg); /* rotateZ ile aynı */
+
+transform: rotateY(1turn); /* y ekseninde 1 tur döndürmek için */
+transform: rotateY(0.5turn); /* y ekseninde yarım tur döndürme yani 180 derece */
+transform: rotate(1turn); /* x ve y ekseninde 1 tur döndürmek */
+
+transform: rotate(3.142rad); /* deg 'in rad cinsinden değeri (gereksiz) */
+```
