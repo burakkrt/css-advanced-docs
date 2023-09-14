@@ -513,6 +513,20 @@ Tarayıcının genişlik veya uzunluk özelliklerine göre aksiyonlar almamızı
 
 ## Translate Methods
 
+### translate()
+
+Bir öğenin yatay ve/veya dikey eksende belirli bir mesafe boyunca hareket etmesini sağlar.
+
+```css
+transform: translateX(30px); /* x ekseninde içeriği 30 px sağa kaydırır */
+transform: translateX(-30px); /* x ekseninde içeriği 30 px sola kaydırır */
+transform: translateY(30px); /* x ekseninde içeriği 30 px aşağıya kaydırır */
+transform: translateY(-30px); /* x ekseninde içeriği 30 px yukarıya kaydırır */
+
+/* içeriği x ekseninde 30 px sola, y ekseninde 30px aşağıya kaydırır */
+transform: translate(30px, 30px); 
+```
+
 ### matrix()
 
 Bir öğeyi x,y,z ekseninde döndürmeye yarar. transform ‘un `scale`, `rotate` vb. gibi özelliklerini bir arada kullanma gibi düşünebiliriz. **Güzel animasyonlar elde edilebilir.**
@@ -546,4 +560,27 @@ transform: rotateY(0.5turn); /* y ekseninde yarım tur döndürme yani 180 derec
 transform: rotate(1turn); /* x ve y ekseninde 1 tur döndürmek */
 
 transform: rotate(3.142rad); /* deg 'in rad cinsinden değeri (gereksiz) */
+```
+
+### scale()
+
+Bir öğenin boyutunu yatayda ve dikeyde ölçeklendirmek için kullanılır.
+
+```css
+transform: scaleX(1.3);  /* içeriği x ekseninde 1.3 katında büyült */
+transform: scaleY(2);  /* içeriği x ekseninde 2 katında büyült */
+transform: scale(2);  /* içeriği x ve y ekseninde eşit olarak 2 katında büyült */
+
+/* içeriği x ekseninde 1.5, y ekseninde 2 kat olarak 2 katında büyült */
+transform: scale(1.5 , 2);  
+```
+
+### skew()
+
+Bir öğenin yatay veya dikey düzlemde eğik bir şekilde çarpılmasını veya döndürülmesini sağlar.
+
+```css
+transform: skewX(30deg); /* x ekseninde 30 derece eğik yap */
+transform: skewY(80deg); /* y ekseninde 80 derece eğik yap */
+transform: skew(30deg, 80deg); /* x ve y ekseninde eğik yap */
 ```
