@@ -511,7 +511,7 @@ Tarayıcının genişlik veya uzunluk özelliklerine göre aksiyonlar almamızı
 }
 ```
 
-## Translate Methods
+## Transform Methods
 
 ### translate()
 
