@@ -1,5 +1,9 @@
 # Css
 
+Hazırlayan : 
+
+> GitHub : [**/burakkrt**](https://github.com/burakkrt)
+
 ### Border Radius
 
 Genellikle direk pixel değeri vererek x ve y ekseni için eşit miktarda yuvarlama yaparız fakat raidus ‘u x ekseni için ayrı y ekseni için ayrı şekilde yuvarlama işlemi yapabiliriz.
