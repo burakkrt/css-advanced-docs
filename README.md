@@ -759,3 +759,157 @@ document.querySelector('#button').addEventListener("click", () => {
   }
 })
 ```
+
+## Pseudo Elements
+
+## ::after
+
+Bir öğenin sonuna ekstra içerik veya stil özellikleri eklemek için kullanılır.
+
+```css
+<p class="text">Buraya herhangi bir metin girdim</p>
+
+.text::after{
+	content: "Metinden sonra bunu yazdım";
+	color: red;
+	margin-left: 4px;
+}
+
+.text::after{
+	content: url(../images/bird.png);
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+```
+
+## ::before
+
+Bir öğenin başına ekstra içerik veya stil özellikleri eklemek için kullanılır.
+
+```css
+<p class="text">Buraya herhangi bir metin girdim</p>
+
+.text::before{
+	content: "Metinden önce bunu yazdım";
+	color: red;
+	margin-left: 4px;
+}
+
+.text::before{
+	content: url(../images/bird.png);
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+```
+
+### ::file-selector-button
+
+Dosya seçme butonunun stil özelliklerini değiştirmek için kullanılır.
+
+```css
+<input class="fileBtn" type="file" name="avatar" accept="image/png, image/jpeg" />
+
+.fileBtn::file-selector-button {
+  background-color: black;
+  color:white;
+  border-radius: 8px;
+}
+
+/* eğer .fileBtn {..} içerisinde stil işlemleri yaparsak bu butonu etkilemez
+butonun yanındaki "Dosya seçiniz" yazısının stilini etkiler. Button tasarımı için
+::file-selector-button özelliğini kullanmamız gerekir. */
+```
+
+### ::first-letter
+
+Bir öğenin ilk satırının ilk karakterinin stil özelliğini değiştirmek için kullanılır. Sadece text ögeleri için geçerlidir ve ilk eleman text olmalıdır.
+
+```css
+<p class="text">Buraya herhangi bir metin girdim</p>
+
+/* B karakterine aşağıdaki stilleri uygular */
+.text::first-letter {
+	color: red;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* ilk p etiketindeki ilk karakter "L" ilgili stilleri uygular */
+<div class="text">
+  <p>Lorem ipsum dolor sit</p>
+  <p>Lorem ipsum dolor sit</p>
+</div>
+```
+
+### ::first-line
+
+Bir öğenin ilk satırına ilgili stilleri uygular.
+
+```css
+/* ilk p etiketindeki ilk karakter "L" ilgili stilleri uygular */
+<div class="text">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, 
+     doloremque eius ipsam laborum modi numquam quos reprehenderit. 
+     Accusantium cum, dolore dolorum earum esse facilis, hic necessitatibus
+     odit pariatur recusandae vitae.</p>
+  <p>Lorem ipsum dolor sit</p>
+</div>
+
+/* ilk satıra ilgili stilleri uygular */
+.text::first-letter {
+	color: red;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+```
+
+### ::marker
+
+li elementlerinin önüne ifade eklememizi veya var olan içeriği stillendirmemizi sağlar. Sadece liste elemanlarında çalışır.
+
+```css
+<ul class="list-items">
+    <li class="list-item-1">test 1</li>
+    <li class="list-item-2">test 2</li>
+    <li class="list-item-3">test 3</li>
+</ul>
+
+.list-item-1::marker {
+  content: "1=";
+  color: red;
+}
+/* zaten bir içerik var ise bunu stillendirebiliriz */
+.list-item-1::marker {
+  color: red;
+	background-color: blue;
+}
+```
+
+### ::placeholer
+
+input ve textarea gibi elementlerde tanımlanan placeholder text ‘inin stil özelliklerini belirtmemizi sağlar. placeholder ‘ı html etiketinde tanımladıktan sonra stil işlemleri uygulayabiliriz.
+
+```css
+<input type="text" class="input" placeholder="isim giriniz">
+
+.input::placeholder{
+  color:red;
+	font-weight: bold;
+}
+```
+
+### ::selection
+
+Kullanıcı tarafından bir metin seçildiğinde, seçilen metine stil özellikleri uygulamamızı sağlar.
+
+```css
+<p class="text">Buraya herhangi bir metin girdim</p>
+
+.text::selection {
+	color: black;
+  background-color: #EBB02D;
+}
+```
