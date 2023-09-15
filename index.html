@@ -1,0 +1,1524 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Css</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ae4f4567-b42b-45d2-9b4a-8fd64e4e4fd7" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/5968242.png"/></div><h1 class="page-title">Css</h1><p class="page-description"></p></header><div class="page-body"><div id="7c4e479f-233e-42a2-9db1-5f665d800b5f" class="column-list"><div id="745e089f-e0bb-4d55-8bad-d6635ed0e8f8" style="width:18.75%" class="column"><p id="13c55fd3-d87c-4b84-a5f4-0da9be5a076a" class="">Hazırlayan : </p></div><div id="db732305-2116-4ea1-a70d-702ea77eddde" style="width:81.25%" class="column"><blockquote id="626b094f-9517-4555-9231-d3256b145e23" class="block-color-red_background">GitHub : <mark class="highlight-default"><strong><a href="https://github.com/burakkrt">/burakkrt</a></strong></mark></blockquote></div></div><h3 id="398dfefb-c680-4e83-be02-5884d0c1082a" class="">Border Radius</h3><p id="462692d8-2c61-4cc5-a482-950c04bb0729" class="">Genellikle direk pixel değeri vererek x ve y ekseni için eşit miktarda yuvarlama yaparız fakat raidus ‘u x ekseni için ayrı y ekseni için ayrı şekilde yuvarlama işlemi yapabiliriz.</p><figure id="dc4556ed-f901-40d3-bdd7-4fc842ab4e00" class="image"><a href="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-10_223659_www.youtube.com.png"><img style="width:961px" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-10_223659_www.youtube.com.png"/></a></figure><pre id="7c1a80c0-8e47-44f9-96d8-9f381a671f3c" class="code"><code>border-radius: 100px / 200px</code></pre><figure id="afed5dbb-6bcb-498b-84c8-6056a29b3a19" class="image"><a href="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/gg.png"><img style="width:983px" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/gg.png"/></a></figure><h3 id="a5cf22fd-d293-4dbf-a7ff-c4c73ff9e684" class="">display: inline-flex</h3><p id="5b86fbe6-4724-4b4f-af56-b562fa1d4528" class="">display: flex ‘den çok bir farkı yoktur. Ögeleri yan yana (row içeriside) sıralamak için kullanılır. Yatay olarak sıralar, taşma yapıyorsa overflow-hidden gibi taşırır, alt satıra geçmez. jusitfy-content, align-items gibi flex özellikleri kullanılabilir.</p><h3 id="260ecfd3-d9d5-4371-b42d-82e19cd4ce1f" class="">filter: blur()</h3><p id="c1444cfd-a733-4cc2-a974-fd00e0d7ac11" class="">Bulanıklaştırma. Ekrandaki kaç pikselin birbirine karıştığını tanımlar</p><pre id="1fa34e73-01f4-44c5-ad30-97c9784d5820" class="code"><code>filter: blur(4px);</code></pre><h3 id="178941d5-2142-4905-aa71-08834e0256cf" class="">filter: brightness()</h3><p id="ca794b38-fd58-4c31-a1e5-49cbd7da531b" class="">Parlaklığı arttır/azalt. 1 ‘default değer. 1 ‘den yukarısı parklaklaştır, aşağısı azalt. veya 100% ‘den yukarısı parlaklaştır veya azalt.</p><pre id="659cb5a4-c9bc-430c-b689-3973a116dab8" class="code"><code>filter: brightness(0) /* tamamen karanlık */
+filter: brightness(1) /* olduğu gibi */
+filter: brightness(1.3) /* parlak */
+filter: brightness(100%) /* olduğu gibi */
+filter: brightness(70%) /* parlaklığı azalt */</code></pre><h3 id="59396e9c-11e8-4910-bb91-cc891dcce958" class="">filter: contrast()</h3><p id="dd68300b-136f-4502-9cd4-a4740c6497e7" class="">Renkler arasındaki farkın derecesi olarak tanımlanır.  1 ‘default değer. 1 ‘den yukarısı parklaklaştır, aşağısı azalt. veya 100% ‘den yukarısı parlaklaştır veya azalt.</p><pre id="7e5cb612-3f0a-4b25-bd22-02bb43d88e53" class="code"><code>filter: contrast(0) /* tamamen gri */
+filter: contrast(1) /* olduğu gibi */
+filter: contrast(1.3) /* contrast yüksek */
+filter: contrast(100%) /* olduğu gibi */
+filter: contrast(70%) /* contrast düşük */</code></pre><h3 id="a09ba68b-2bcd-4a31-802a-247640d6a33b" class="">filter: drop-shadow()</h3><p id="a4bd7ed2-4328-4ee1-8551-de0cc390fad0" class="">Bir elementin etrafına bir gölge oluşturur. </p><pre id="99560ca7-4a52-4583-9b3a-ab812dd6e211" class="code"><code>filter: drop-shadow(X konum, Y konum, Bulanıklık, Renk);
+filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));</code></pre><h3 id="ce34898a-d054-4572-a22b-9a85d5eb6254" class="">filter: grayscale()</h3><p id="154448d1-a153-4c08-8f5a-18e7e81eeeac" class="">Gri renk tonlarına dönüştürmeye yarar.</p><pre id="783c1027-3fba-49d2-95e0-2028d0efe7e3" class="code"><code>filter: grayscale(0) /* olduğu gibi */
+filter: grayscale(.7) /* hafif grileşme */
+filter: grayscale(100%) /* tam gri */
+filter: grayscale(1) /* tam gri */</code></pre><h3 id="14cd32fe-98db-4446-9190-af0e9e7e5626" class="">filter: hue-rotate()</h3><p id="a735e0ca-58d6-410d-b604-ea54e87162e8" class="">Bir elementin renklerini çeşitli derecelerde döndürerek farklı renk efektleri elde etmenizi sağlar.</p><figure id="3cc07118-0443-4b61-8059-912a0141b0c8" class="image"><a href="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-12_000055_devdocs.io.png"><img style="width:925px" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-12_000055_devdocs.io.png"/></a></figure><p id="88028a20-84cb-4f91-807c-34b69b3c8691" class="">text ‘in arkaplan rengini vermediğimiz halde hue-rotate ile rengi belirli derece döndürerek elde edebiliriz.</p><pre id="b3a84baa-3359-488c-b1ea-da6d02b59b1d" class="code code-wrap"><code> 	filter: hue-rotate(-60deg);
+  text-shadow: 2px 2px blue;
+  background-color: magenta;
+  color: goldenrod;
+  border: 1em solid rebeccapurple;
+  box-shadow: inset -5px -5px red, 5px 5px yellow;</code></pre><h3 id="2f93da21-1ce2-4a12-b33d-455d78550615" class="">filter: invert()</h3><p id="1572dff0-2784-48aa-a6c5-33fe3bccb164" class="">Bir elementin renklerini ters çevirmek veya negatif bir görünüm oluşturmak için kullanılır.</p><pre id="188622e9-ac8c-4684-b8a6-b4c8a9cfe568" class="code"><code>.box {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  filter: invert(1);
+}
+
+/* return background-color: white; */</code></pre><h3 id="98c3baa1-d7e8-4ef6-951f-817ffc03109a" class="">filter: opacity()</h3><p id="458c3aa1-83b0-4366-826c-fed39feb0fd8" class="">Saydamlık seviyesini ayarlar.</p><pre id="52db5c51-67e6-4103-9303-2d892161fe0b" class="code"><code>filter: opacity(1) /* olduğu gibi */
+filter: opacity(100%) /* olduğu gibi */
+filter: opacity(0) /* görünmez */
+filter: opacity(50%) /* yarı oranda saydam */</code></pre><h3 id="82cc2f1d-8c00-452b-a5a7-e535835d26ae" class="">filter: saturated()</h3><p id="73cc49e9-e524-4d2c-beae-c50b17e1dc85" class="">Renk doygunluğunu ayarlar.</p><pre id="f3c4e89a-48d0-4984-9342-2f5970b5764d" class="code"><code>filter: saturated(1) /* olduğu gibi */
+filter: saturated(0) /* renksiz (siyah beyaz) */
+filter: saturated(100%) /* olduğu gibi */
+filter: saturated(4) /* 4 katı oranda doygun renk */
+filter: saturated(50%) /* yüzde elli oranında renksiz */</code></pre><h3 id="2a259655-a07f-4c43-9587-cdfcd240c71f" class="">filter: sepia()</h3><p id="6ebf0639-29d9-4196-a203-e06e8361cbea" class="">Elementin renklerini sepia tonlarına dönüştürmek için kullanılır. Sepia tonları, eski fotoğraflarda sıkça görülen ve kahve tonlarına sahip bir renk tonlamasıdır.</p><pre id="29e7d15e-eb0d-445a-a677-bce71108f1b5" class="code"><code>filter: sepia(0); /* olduğu gibi */
+filter: sepia(.5); /* yarı oranında sepia renkler */
+filter: sepia(1); /* tamamen sepia (kahverengi tonları) */
+filter: sepia(100%); /* tamamen sepia (kahverengi tonları) */</code></pre><h3 id="dfbde1f3-eca2-4eb9-96ba-eb1bfe445f9a" class="">font</h3><p id="66247995-0fc2-4607-8cfa-ed1549f74a2a" class="">Yazı özelliklerini tek satırda tanımlamayı sağlar.</p><p id="4e9ec558-ded7-4f7b-b809-15afd6cab03f" class=""><strong>small-caps : </strong>Yazıdaki tüm küçük harfleri büyük harfe çevirir fakat boyutlarını küçük harfteki ile aynı şekilde bırakır. Büyük harfler, küçük harf boyutunda gösterilir.</p><pre id="4a6ac8de-abf0-4491-a5d3-387e2dd2f80b" class="code"><code>font: small-caps bold 18px/32px sans-serif;
+
+/* font : &lt;yazı tipi&gt; &lt;kalınlık&gt; &lt;boyut&gt;/&lt;satır yüksekliği&gt; &lt;yazı stili&gt; */</code></pre><h3 id="bdf06e20-d7fd-4917-ae56-e8f852ed8539" class="">font-family</h3><p id="1b51ef96-be31-40de-9abd-1b8f66baad30" class="">Yazı tipi stilinin belirlenmesi için kullanılır. Birden fazla değer alabilir ve bunlar virgün ile ayrılır. Eğer yazı tipi stili bulunamazsa bir sonraki yazı stilini uygular.</p><pre id="aa429d06-eded-4e79-8c2c-dbe3627a765d" class="code"><code>font-family: &quot;Gill Sans&quot;, sans-serif;</code></pre><h3 id="427d584a-d49b-4064-9d56-8b87b41bdcc0" class="">font-size</h3><p id="36ffaaa5-b3af-40a7-9777-605cbf9b6650" class="">Yazı boyutu.</p><pre id="280f2052-1310-4743-945c-f816158f5483" class="code"><code>font-size: 12px;
+font-size: 0.8em;
+font-size: 1.2rem;
+font-size: x-small;</code></pre><h3 id="376ecb1a-6813-4b84-af05-3a998ae9bf34" class="">font-stretch</h3><p id="566cfd1e-0a5a-46f9-bf2f-80c4e8927db2" class="">Yazıyı yüzeysel olarak daraltır veya genişletir. letter-spacing ‘e benzerdir ama stretch tüm yazıyı yüzeysel olarak daraltır veya genişletir.</p><pre id="9e66fe84-c440-4f44-9f00-cbc1fe014d5e" class="code"><code>font-stretch: condensed; /* dar */
+font-stretch: semi-expanded; /* yarı dar */
+font-stretch: ultra-condensed; /* çok dar */
+font-stretch: expanded; /* geniş */
+font-stretch: semi-expanded; /* yarı genişlik */
+font-stretch: ultra-expanded; /* tam genişlik */
+font-stretch: 30%; /* yüzde otuz dar */</code></pre><h3 id="811a08d7-2cd0-4999-b7b2-8f1868183256" class="">font-style</h3><p id="1c816262-214d-4dd4-b7f5-139d0e9005b2" class="">Yazı şeklini ayarlar.</p><pre id="102fd80e-92d9-4561-b528-586c92e81818" class="code"><code>font-style: normal;
+font-style: italic;</code></pre><h3 id="bf67d207-40b4-4e1a-8a40-34e7f6754b1f" class="">font-weight</h3><p id="f9fd779f-cbea-41ec-9a7f-f6ac5ff01421" class="">Yazının kalınlığını ayarlar.</p><pre id="68ab2a87-70d4-4b68-bc2b-36694ce46eb8" class="code"><code>font-weight: normal;
+font-weight: bold;
+
+font-weight: lighter;
+font-weight: bolder;
+
+font-weight: 100;
+font-weight: 200;
+font-weight: 300;
+font-weight: 400; /* normal */
+font-weight: 500;
+font-weight: 600;
+font-weight: 700; /* bold */
+font-weight: 800;
+font-weight: 900;</code></pre><h3 id="bb977efa-991f-4c64-b146-4931e468b3cb" class="">line-height</h3><p id="66de37a0-8f53-4421-9f99-4e1c87bcd01d" class="">Satır yüksekliğini ayarlar.</p><pre id="521058f0-dee7-42ef-9c86-ad45c5f4d3a8" class="code"><code>
+line-height: normal;
+line-height: 3.5;
+line-height: 3em;
+line-height: 34%;</code></pre><h3 id="262c9f64-ef1e-42f2-8725-f8a6530139d2" class="">list-style-image</h3><p id="9d8cdadc-3ceb-4db1-a6bf-4166fe2fd9b9" class="">Listenin önüne resim koymanı sağlar. Resim boyutu ayarlanamadığı için boyutun küçük olmasına dikkat edilmelidir.</p><p id="8d9263e9-116c-43aa-b1e1-cafa2015e063" class=""><strong>tüm list-style özellikleri her zaman li etiketine verilir.</strong></p><pre id="38772c28-2c94-458f-bca4-4feceb1dde33" class="code"><code>ul &gt; li {
+	list-style-image: url(&quot;star.png&quot;);
+}</code></pre><h3 id="3c92b63a-e569-4390-a4a5-80b4a9324580" class="">list-style-type</h3><p id="4ef7b8c2-ea9b-4818-bc85-e5a200478aef" class="">li etiketlerini farklı semboller ile sıralama.</p><pre id="948a6891-9829-422f-9f2c-dd5cb8093b0b" class="code"><code>list-style-type: decimal; /* sayısal, sıra ile 1. 2. 3. 4. */
+list-style-type: square;  /* siyah kare */
+list-style-type: circle;  /* içi boş yuvarlak */
+list-style-type: disc;    /* siyah yuvarlak */
+
+list-style-type: upper-roman; /* büyük roman rakamları ile (I, II, III, IV ...) */
+list-style-type: lower-roman; /* küçük roman rakamları ile (i, ii, iii, iv ...) */
+
+list-style-type: &quot;Adı : &quot;; /* listenin başına string ifade yazabiliriz. */</code></pre><h3 id="de8477e4-9fc4-4eaf-95b6-41e82a2c02f1" class="">list-style-position</h3><p id="68508c47-811f-43c9-a22a-30aa0e2f93c8" class="">List style özellikleri html ‘ye ::marker olarak li etiketinden önce yansıtılır. ::marker ‘lar default olarak <code>outside </code>olarak belirlenir yani listenin dışına taşabilir. li etiketinin içerisinde kullanmak ve taşmaları önlemek için <code>inside </code>özelliği kullanılmalıdır.</p><pre id="ab83e04e-9d3d-47da-883d-2e507e947d45" class="code"><code>ul &gt; li {
+	list-style-position: inside;
+}</code></pre><h3 id="11d1bcda-6724-46b7-bed5-aee0a6d0d91d" class="">list-style</h3><p id="ccd70739-3071-41f6-b64e-5d3ba408ab06" class="">Tek satırda tüm <code>list-style</code> işlemlerini uygulayabiliriz.</p><pre id="f56fd75d-ab0b-4dfa-87ef-99ef60f29736" class="code"><code>list-style: square inside;
+list-style: &quot;Adı : &quot; inside;
+list-style: url(&quot;star.png&quot;)</code></pre><h3 id="b5784d4a-2836-41e8-8feb-7f242484e8cb" class="">image-orientatiton</h3><p id="e410daba-40aa-4b3a-ada5-4c850a4f8483" class="">Bir görüntünün doğru şekilde görüntülenmesini sağlamak için kullanışlıdır, özellikle dikey veya yatay olarak döndürülmüş görüntülerle çalışırken.</p><p id="5c7acfbc-beb6-4904-844f-c508920ec260" class="">Not: Her tarayıcı desteklemez bu nedenle kullanımı sakıncıladır. Sadece bilgi olsun yeterli.</p><pre id="f732bc33-ff96-411d-b9ea-68d4bea597fa" class="code"><code>/* ekran yatay veya dikey konumda ise görüntü oryantasyonunu kendi otomatik tanımlasın.
+ekranı yatay yaptığında görüntüde ona göre döndürülür. */
+image-orientation: from-image;
+
+image-orientation: 90deg;  /* görüntüyü 90 derece saat yönünde çevir. */</code></pre><h3 id="42c68c5e-a6ad-4edf-b9d8-d17c633576b7" class="">image-renderig</h3><p id="52758d99-0f45-4361-bf8b-700566ecb5da" class="">Resimlerin büyütülmesi veya küçültülmesi sırasında kalite ve pikselleşme kontrolü için kullanılır.</p><pre id="25ef422b-247b-41cd-85bf-81a9549a220f" class="code"><code>/* Aşağıdaki değerler resmin orginal boyutundan fazla büyültülmesi veya küçültülmesi
+durumlarında vereceği sonuçları içerir.  */
+
+/* Tarayıcı, performans ve görüntü kalitesi arasında bir denge sağlamaya çalışır.  */
+image-rendering: auto;
+
+/* Resmin daha net ve pikselsiz görüntülenmesini sağlar. (İlk resim)  */
+image-rendering: crisp-edges;
+
+/* Pikselli bir görünümle büyütmeyi veya küçültmeyi sağlar. (İkinci resim)
+Bu genellikle retro tarzda görüntüler oluşturmak için kullanılır. */
+image-rendering: pixelated;</code></pre><div id="a03765c6-37e5-4fc8-98cf-8f750541d6a8" class="column-list"><div id="5019b841-a36c-4c2e-b807-823b5881cd60" style="width:50%" class="column"><figure id="f3804fd1-2a50-4206-b639-b66664c858da" class="image"><a href="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/1.png"><img style="width:336px" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/1.png"/></a></figure></div><div id="65dc4a39-cd5c-483b-b537-ed6e8551245c" style="width:50%" class="column"><figure id="7970f332-cbb8-4d92-ab1d-754bee55254e" class="image"><a href="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/2.png"><img style="width:411px" src="Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/2.png"/></a></figure></div></div><h3 id="e028dde0-a32c-4cd5-b5b6-b5facacce1d1" class="">object-fit</h3><p id="69bf381b-0b7f-42dc-b9c2-76ab4008b3b9" class="">Görüntülerin belirli bir boyutta nasıl sığdırılacağını belirtir.</p><pre id="0b5fdda2-404c-458a-a235-2b3ac3ac27bb" class="code"><code>/* (default) Alanı tamamen kaplar, içerik çekilir veya sıkıştırılır. Görüntü korunmaz.  */
+object-fit: fill;
+/* Görüntünün hepsi görünür ve resim boyutu korunur, fazla alanlar boş kalır. */
+object-fit: contain; 
+/* Alanı tamamen kaplar, içerik korunur ve fazla alanlar görünmez. (kırpma işlemi)  */
+object-fit: cover; 
+
+object-fit: scale-down; // contain ile aynı;</code></pre><h3 id="10adb58d-4ccc-4716-8ecf-0bc967881f32" class="">object-position</h3><p id="a2cd3c95-518d-42df-b68a-5cd8378ebb1e" class="">Görüntünün konteynır içerisinde hizalanması sağlar;</p><pre id="8ee0f912-8de0-4ed3-93e0-1a249fe73a7b" class="code"><code>object-position: center; /* ortalar */
+object-position: right top; /* sağ üst */
+object-position: 10px 10px; /* x ve y ekseninden 10 pixellik boşluk bırakır; */
+object-position: 50% 20%; /* x ekseninde ortalar y ekseninde yüzde 20 aşağısı. */</code></pre><h2 id="36788837-6e04-4aae-9cc9-64237414750a" class="">MEDİA QUERİES</h2><h3 id="d92978df-cb0a-418d-855a-36d0ab749b58" class=""><em>@media </em>(any-hover: hover)</h3><p id="d890c24a-4ff7-43bd-a596-97a5b7a9a479" class="">Kullanıcının fare veya işaretçi benzeri bir cihaz kullanarak herhangi bir öğe üzerine işaret koyma yeteneğine sahip olup olmadığını belirler. <code>hover </code> işlemleri uygularken dokunmatik ekran kullananların <code>hover </code>özelliğini kullanamazlar. <code>any-hover</code> ile sadece öğe üzerine gelebilen cihazlar için <code>hover </code>özelliğini kullanmamız daha güvenli olacaktır.</p><pre id="4854db6e-22da-45b2-a56d-a0dc101e3f17" class="code"><code>/* eğer kullancının fare vb. işaretçisi var ise p nin üzerine geldiğinde renk
+maviye dönüşebilir, işaretçisi yok ise hover özelliği kullanılmaz. */
+p{
+	color: black;
+}
+
+@media (any-hover: hover) {
+	p:hover{
+		color: blue;
+	}
+}</code></pre><h3 id="48ddcec9-6a88-4071-aa53-1e924add19ce" class=""><em>@media </em>(pointer , any-pointer)</h3><p id="86793cd9-2f5f-46a9-bf88-079aef767f50" class="">Kullanıcının hangi türde işaretçi kullandığını belirler. <code>fine</code> kullanıcı işaretçisi varsa, <code>coarse</code> kullanıcı dokunmatik ekran tarzı bir işaretçi kullanıyor ise. Bu özellik genellikle masaüstü veya mobil için ayrı stillendirmede kullanılır.</p><pre id="c2746ea5-5e96-4c5a-a3e1-56238d3b6862" class="code"><code>/* Eğer kullanıcı herhangi bir türde işaretçi cihazı kullanıyorsa (PC, Dokunmatik ekran
+@media (any-pointer: fine) {
+	p{
+		color: red;
+	}
+}
+
+/* Eğer sadece fare gibi bir işaretçi cihazı kullanıyor ise */
+@media (pointer: fine) {
+  p{
+		color: blue;
+	}
+}</code></pre><h3 id="a7e54460-07ba-4393-8469-cf84ad3b67c0" class=""><em>@media </em>(color)</h3><p id="f3450908-ed53-402c-b219-b385b5af7a7b" class="">Kullanıcının renk kapasitesini ve renk destek seviyesini tanımlamak için kullanılır.</p><pre id="8df3956c-898c-4901-8201-2b30f38d3f06" class="code"><code>@media (color) {...}  /* Kullanıcının ekranı renkli gösteriyor ise */
+@media (min-color: 8) {...} /* Kullanıcı en az 8 bit renk değerini karşılıyor ise */
+@media (color-index) {...} /* Kullanıcı sadece siyah beyaz renk destekliyor ise */</code></pre><h3 id="299b17cb-a7a5-4c81-847f-3b366d901462" class=""><em>@media </em>(display-mode)</h3><p id="d62ca289-1692-494d-ad82-fd60c6b8d55b" class="">Kullanıcının web sitesini nereden ve nasıl çalıştığını kontrol eder. Dört farklı değer alır.</p><pre id="27be4a4e-9f4c-4f1a-9184-9fa4c622323d" class="code"><code>/* Kullanıcı bir tarayıcıdan web sitesine giriyor ise */
+@media (display-mode: browser) {...} 
+/* Kullanıcı bir tarayıcıdan tam ekran modunda web sitesine giriyor ise */
+@media (display-mode: fullscreen) {...} 
+/* Kullanıcı, web sayfasını bir uygulamanın içerisinden görüntülüyor ise */
+@media (display-mode: fullscreen) {...} 
+/* Kullanıcı web sayfasını minimal bir kullanıcı arabirimi (UI) ile görüntülüyor ise*/
+@media (display-mode: minimal-ui) {...} </code></pre><h3 id="7618a115-f430-4b00-92a3-4b3f9d62e4fe" class=""><em>@media </em>(hover: hover)</h3><p id="2ac43057-3300-46d8-aced-25f80d44082e" class="">Kullanıcının bir HTML etiketinin üzerine gelip gelemiyeceğini kontrol eder. Mobil cihazlarda fare işaretcisi olmadığı için kullanıcı etiketlerin üzerinde dolaşamaz. normal <code>:hover</code> özelliği ile aynıdır fakat hover olabilecek ögelere hover vererek daha kullanışlı kod yazmamızı sağlar.</p><pre id="ae2c1578-bdbc-46cc-a343-7342025e907f" class="code"><code>/* eğer hover destekleniyor ise p etiketine hover özelliği verir */
+@media (hover: hover) {
+	p:hover {
+		color: red;
+	}
+}
+/* hover desteklensede desteklenmese de hover özelliği verir. */
+p:hover {
+	color: red;
+}</code></pre><h3 id="78fbd89a-054b-45c7-95b5-5992cb5b1f77" class=""><em>@media </em>(orientation)</h3><p id="32ada0ab-8930-4281-8bca-57d0082a3701" class="">Kullanıcının ekranı dikey veya yatay kullanımını belirler. Özellikle mobil cihazlarda ekran döndürme olayları için kullanışlıdır.</p><pre id="bf7a9534-62c5-4005-9a86-2ff64fc2b403" class="code"><code>/* Ekran dikey (portre) modunda ise */
+@media (orientation: portrait) {
+  p{
+    color: red;
+  }
+}
+/* Ekran yatay(manzara) modunda ise */
+@media (orientation: landscape) {
+  p{
+    color: blue;
+  }
+}</code></pre><h3 id="fcda05ca-2216-442f-a848-1403a0e5dd94" class="">Javascript ile dinamik media kontrolü</h3><p id="7843d4ec-95cc-47cb-b4c5-45aa1d5232d1" class="">Javascript ile media sorgularını kontrol edip buna göre aksiyonlar gerçekleştirebiliriz.</p><pre id="c39a6acb-5c74-4da3-8182-2f6615c0e069" class="code"><code>const mediaQueryList = window.matchMedia(&quot;(orientation: portrait)&quot;);
+
+if(mediaQueryList.matches){
+		console.log(&quot;Şuan dikey ekrandasın&quot;);
+} else {
+		console.log(&quot;Şuan yatay ekrandasın&quot;);
+}</code></pre><pre id="6f699958-6fab-4b64-b1ad-4692ee99690b" class="code"><code>const responsive = window.matchMedia(&quot;(max-width: 768px)&quot;);
+
+if(responsive.matches) {
+	div.styled.backgroundColor = &quot;blue&quot;;
+}</code></pre><pre id="956903ee-db58-4a4f-acf3-e2e7e9d9b904" class="code"><code>/* chance işlemi : belirtilen koşul her değiştiğinde kod bloğu çalışır */
+window.matchMedia(&quot;(max-width: 390px)&quot;).addEventListener(&quot;change&quot;, (e) =&gt; {
+    if(e.matches){
+      console.log(&quot;390px &#x27;den küçük ekran&quot;);
+    } else {
+      console.log(&quot;390px &#x27;den büyük ekran&quot;);
+    }
+})</code></pre><h3 id="bed49abd-2733-4d32-a6b3-1292b14ee4aa" class=""><em>@media </em>(width)</h3><p id="9ee294fe-a7d1-4856-adbb-d56a458b4dc6" class="">Tarayıcının genişlik veya uzunluk özelliklerine göre aksiyonlar almamızı sağlar. Farklı cihaz ölçeklerine göre stil methodları oluşturmamızı sağlar.</p><pre id="253a6c00-310c-49fe-a827-e930205b1d68" class="code"><code>/* tarayıcı genişliği veya uzunluğu belirli bir pixelde ise */
+@media (width: 360px) {
+  div {
+    color: red;
+  }
+}
+@media (height: 360px) {
+  div {
+    color: red;
+  }
+}
+
+/* tarayıcı genişliği veya uzunluğu belirli bir pixelin üzerinde ise */
+@media (min-width: 350px) {
+  div {
+    background: yellow;
+  }
+}
+@media (min-height: 350px) {
+  div {
+    background: yellow;
+  }
+}
+
+/* tarayıcı genişliği veya uzunluğu belirli bir pixelin aşağısında ise */
+@media (max-width: 1920px) {
+  div {
+    border: 2px solid blue;
+  }
+}
+@media (max-height: 1920px) {
+  div {
+    border: 2px solid blue;
+  }
+}</code></pre><h2 id="702c7f44-4cb1-48a4-ac31-1346182ce6a8" class="">Transform Methods</h2><h3 id="8179ef24-0b01-4d6e-b0c9-8fb7a54fa73c" class="">translate()</h3><p id="351a6ccf-e245-4c71-afbb-481054430e16" class="">Bir öğenin yatay ve/veya dikey eksende belirli bir mesafe boyunca hareket etmesini sağlar.</p><pre id="440a0a84-317b-4e07-a6a9-89f48a657423" class="code"><code>transform: translateX(30px); /* x ekseninde içeriği 30 px sağa kaydırır */
+transform: translateX(-30px); /* x ekseninde içeriği 30 px sola kaydırır */
+transform: translateY(30px); /* x ekseninde içeriği 30 px aşağıya kaydırır */
+transform: translateY(-30px); /* x ekseninde içeriği 30 px yukarıya kaydırır */
+
+/* içeriği x ekseninde 30 px sola, y ekseninde 30px aşağıya kaydırır */
+transform: translate(30px, 30px); </code></pre><h3 id="4055fc1f-e04e-4bad-9f40-3691d89658b7" class="">matrix()</h3><p id="a4177e91-1d46-4ce0-b0fd-3aab66c66248" class="">Bir öğeyi x,y,z ekseninde döndürmeye yarar. transform ‘un <code>scale</code>, <code>rotate</code> vb. gibi özelliklerini bir arada kullanma gibi düşünebiliriz. <strong>Güzel animasyonlar elde edilebilir.</strong></p><pre id="87e8ef13-a8ee-4b0f-b7c9-96ee387b3f69" class="code"><code>transform: matrix(a, b, c, d, tx, ty);
+/*
+a, öğenin yatay boyutunu (ölçek faktörü) temsil eder.
+b, öğenin yatay kaydırmasını ve döndürmesini temsil eder.
+c, öğenin dikey kaydırmasını ve döndürmesini temsil eder.
+d, öğenin dikey boyutunu (ölçek faktörü) temsil eder.
+tx, öğenin yatayda konumunu temsil eder.
+ty, öğenin dikeyde konumunu temsil eder.
+*/
+
+transform: matrix(0.5, -0.866, 0.866, 0.5, 100, 100);</code></pre><h3 id="14c11b51-55ce-489f-8c8b-cd9997de7710" class="">rotate()</h3><p id="23ba26e8-dcae-429b-819e-2cedca952484" class="">Öğeyi x, y veya z ekseninde döndürmeyi sağlar.</p><pre id="93a05ae4-da9c-42b4-8443-24639e45e927" class="code"><code>transform: rotateX(90deg);  /* dikey döndürme */
+transform: rotateY(180deg);  /* yatay döndürme */
+transform: rotateZ(180deg);  /* soldan sağa doğru döndürme */
+transform: rotate(180deg); /* rotateZ ile aynı */
+
+transform: rotateY(1turn); /* y ekseninde 1 tur döndürmek için */
+transform: rotateY(0.5turn); /* y ekseninde yarım tur döndürme yani 180 derece */
+transform: rotate(1turn); /* x ve y ekseninde 1 tur döndürmek */
+
+transform: rotate(3.142rad); /* deg &#x27;in rad cinsinden değeri (gereksiz) */</code></pre><h3 id="6f51aea7-670b-4186-941c-52fdc3c935d9" class="">scale()</h3><p id="cde93443-88e3-4911-b67e-2205b36a19f8" class="">Bir öğenin boyutunu yatayda ve dikeyde ölçeklendirmek için kullanılır.</p><pre id="f27278a5-516a-4ea0-a718-e558bb21bd04" class="code"><code>transform: scaleX(1.3);  /* içeriği x ekseninde 1.3 katında büyült */
+transform: scaleY(2);  /* içeriği x ekseninde 2 katında büyült */
+transform: scale(2);  /* içeriği x ve y ekseninde eşit olarak 2 katında büyült */
+
+/* içeriği x ekseninde 1.5, y ekseninde 2 kat olarak 2 katında büyült */
+transform: scale(1.5 , 2);  </code></pre><h3 id="a51f8050-ba85-49ef-8b4e-6184ed755258" class="">skew()</h3><p id="d02842f4-e86e-4150-b205-d06a1436d040" class="">Bir öğenin yatay veya dikey düzlemde eğik bir şekilde çarpılmasını veya döndürülmesini sağlar.</p><pre id="471e5200-3bca-4143-9e8c-625af8b5c9bc" class="code"><code>transform: skewX(30deg); /* x ekseninde 30 derece eğik yap */
+transform: skewY(80deg); /* y ekseninde 80 derece eğik yap */
+transform: skew(30deg, 80deg); /* x ve y ekseninde eğik yap */</code></pre><h2 id="cedba94a-c5a8-4e36-8bed-def950dd045c" class="">Animation Methods</h2><p id="facff406-d0d3-46c2-be4b-84738e3537fb" class="">Not : Aşağıda tanımlanan rotate adındaki animasyon tüm anımasyon metotlarını anlatırken kullanılacaktır. rotate kavramı aşağıdaki animasyon ‘dan gelmekte olacak.</p><pre id="f0ea091f-dd7d-4a2c-8503-ef701e53b00c" class="code"><code>@keyframes rotate {
+  from{
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}</code></pre><h3 id="ddd20279-4bdb-403d-a9d6-4eeddbf81d33" class="">animation-name()</h3><p id="a00f3239-90f3-4413-ba50-2d65a1ffdb70" class="">Oluşturulan animasyonu belirli bir elemente ekleme.
+Önemli: Animasyonu tanımlarken süresini de tanımlamak zorundayız aksi halde animasyon görüntüleyemeyeceğimiz hızda çalışır ve bunu fark etmeyiz.</p><pre id="50ce8fee-804f-428d-b469-b4be9e19334f" class="code"><code>.box{
+	animation-name: rotate; /* rotate adındaki animasyonu box class &#x27;ına tanımladık */
+	animation-duration: 0.7;
+}</code></pre><h3 id="f95faa51-6e01-4495-868f-b38df4224488" class="">animaton-duration()</h3><p id="83f5bb63-a24c-4c08-8734-91e07b032ee8" class="">Animasyonu toplam ne kadar sürede tamamlanacağını belirtir.</p><pre id="3452376b-bdf5-43c4-9e79-30d25710c13b" class="code"><code>.box{
+	animation-name: rotate;
+	animation-duration: 1s; /* toplam 1 saniyede animasyonu oynat */
+}</code></pre><h3 id="77cb433c-1362-4e09-992b-75d1e9ea5ff8" class="">animation-direction()</h3><p id="b2793518-4a72-46fe-8cd6-39935c91531e" class="">Animasyonun ileriye mi yoksa geriye doğru mu oynatılacağını belirtir.</p><pre id="bd286729-a820-4be0-b9e5-8e975ca9a927" class="code"><code>animation-duration: normal; /* animasyonu ileriye doğru oynat (default) */
+animation-duration: reverse; /* animasyonu geriye doğru oynat*/
+/* animasyonu ilk ileriye doğru oynatıp bitirir ve ardından geriye doğru oynatır */
+animation-duration: alternate; 
+/* animasyonu ilk geriye doğru oynatıp bitirir ve ardından ileriye doğru oynatır */
+animation-duration: alternate-reverse; 
+</code></pre><h3 id="d43a1a6e-ef11-476f-9e48-316998b3ded0" class="">animation-iteration-count()</h3><p id="f01236ce-0245-4386-b7c7-7c41bf59d944" class="">Animasyonun kaç kere oynatılacağını belirtir.</p><pre id="63a5f122-e0ae-415d-8c3f-c96799570667" class="code"><code>animation-iteration-count: 4; /* animasyonu 4 kere oynatıp bitirir */
+animation-iteration-count: 1.5; /* animasyonu 1 kere tam 1 kere yarım oynatıp bitirir */
+animation-iteration-count: infinite; /* animasyonu sonsuz kere oynatır.*/</code></pre><h3 id="7e7d5d5b-326e-483d-abd7-90a662fbe6f7" class="">animation-timing-function()</h3><p id="29866f45-8664-497b-ac1e-d25dc1278b70" class="">Animasyonun her döngüde nasıl bir hızda ilerleyeceğini belirler.</p><pre id="1e219165-5612-4310-97f4-41fc3566c757" class="code"><code>/* başlangıçtan sona kadar eşit hızla ilerler */
+animation-timing-function: linear;
+
+/* başlangıçta yavaş sonunda yavaş */
+animation-timing-function: ease;
+
+/* başlangıç yavaş sonlara doğru hızlı */
+animation-timing-function: ease-in;
+
+/* başlangıç hızlı sonlara doğru yavaş*/
+animation-timing-function: ease-out;
+
+/* başlangıç yavaş ortası hızlı sonlar yavaş*/
+animation-timing-function: ease-in-out;
+
+/* cubic-bezier ile özelleştirilmiş animasyon hızı oluşturulabilir*/
+animation-timing-function: cubic-bezier(0.42,0,0.8,1);
+
+animation-timing-function: steps(adımSayısı, atlamaAnahtarKelime);
+/* Animasyonu 5 adımda tamamla (%20, %20, %20, %20, %20) */
+animation-timing-function: steps(5, start)</code></pre><h3 id="45746ff5-3cde-4e7f-bf99-3d3a94a0585f" class="">animation-delay()</h3><p id="a4e4c33e-60da-4d3f-a3f0-fcfb2edfa645" class="">Animasyona tanımlar ve başlamadan önce ne kadar süre bekleyeceğini belirtir.</p><pre id="cb510965-3049-4bde-9f48-d7d2fdb9d35a" class="code"><code>animation-delay: 1s;  /* 1saniye sonra animasyonu oynatmaya başlar */
+animation-delay: -3s;  /* animasyonu 3. saniyesinden itibaren başlatır */</code></pre><h3 id="b77d10be-4406-4224-9d9e-9b1cf1d00de8" class="">animation-fill-mode()</h3><p id="48110223-8407-4e8e-bbe8-ca8ab16f87ae" class="">Belirli bir süre içinde nasıl davranacağını tanımlayan bir özelliktir.</p><pre id="8dffd9bb-1b6a-4e9c-83e7-145328a27fa2" class="code"><code>@keyframes rotate {
+  from{
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+/* Animasyona başlangıç değeri rotate 45deg verdik ve bitişi 180deg olacağını söyledik.
+.box class &#x27;ında rotate ile ilgili bir değer olmadığına dikkat edelim. */
+
+/* none methodu animasyon bittikten sonra animasyonda tanımlanan özelliklerin 
+hiçbirinin .box class &#x27;ına aktarılmayacağını belirtir. Yani animasyon 45 dereceden 
+180 dereceye dönmeye başlar ve animasyon bitince animasyonda tanımlanan tüm
+methodlar .box class &#x27;ından kaldırılır. */
+
+.box {
+	animation-name: rotate;
+  animation-duration: 3s;
+	animation-fill-mode: none;
+}
+
+/* forwards &#x27;da animasyonda tanımlanan son (yani bitiş) methodlarının değerleri .box
+class &#x27;ına eklenir. Yani burada son adım olan rotate(180deg) animasyon bitiminde
+.box class &#x27;ına aktarılır ve animasyon bitse bile .box class &#x27;ı 180 derece döndrülmüş
+şekilde kalmaya devam eder */
+
+.box {
+	animation-name: rotate;
+  animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+
+/* ek olarak backwards ve both özellikleride verilebilir ama kullanıam gerek yoktur. */</code></pre><h3 id="7d385cfd-70ba-4a96-94cc-4c9262ad3a35" class="">animation-play-state()</h3><p id="36027e9f-bf7c-47fe-88f0-d1d5a120dee7" class="">İlgili animasyonun durdurulması veya oynatılması durumunu kontrol etmemizi sağlar.</p><pre id="05d9a6bb-f39b-4969-8657-c6b2ce44630b" class="code"><code>animation-play-state: running;  /* animasyon etkin, devam ediyor */
+animation-play-state: paused;  /* animasyon durduruldu, devam etmiyor */
+
+/* Javascript ile animasyonu durdurup, devam ettirebiliriz 
+running ve paused adında iki class oluşturdum ve yukarıdaki methodları tanımladım.
+Bu class &#x27;ları butona her tıklandığında animasyon bulunan elemente ekleyerek animasyonu
+durdurup veya yeniden başlatabiliriz.
+*/
+
+.paused{
+  animation-play-state: paused;
+}
+
+.running{
+  animation-play-state: running;
+}
+
+document.querySelector(&#x27;#button&#x27;).addEventListener(&quot;click&quot;, () =&gt; {
+  let tt = document.querySelector(&#x27;#animasyonDiv&#x27;);
+  if(tt.classList.contains(&quot;running&quot;)){
+    tt.classList.remove(&quot;running&quot;);
+    tt.classList.add(&quot;paused&quot;)
+  } else {
+    tt.classList.remove(&quot;paused&quot;);
+    tt.classList.add(&quot;running&quot;)
+  }
+})</code></pre><h2 id="8728530a-3809-4ddb-b4fc-2d3694f26a0c" class="">Pseudo Elements</h2><h2 id="cb12538a-2a1e-4203-b230-f5c5e930f362" class="">::after</h2><p id="39d1927c-dd32-4727-9fef-c49f509c944f" class="">Bir öğenin sonuna ekstra içerik veya stil özellikleri eklemek için kullanılır.</p><pre id="a27f9317-06b3-4894-831e-1697ff44c19e" class="code"><code>&lt;p class=&quot;text&quot;&gt;Buraya herhangi bir metin girdim&lt;/p&gt;
+
+.text::after{
+	content: &quot;Metinden sonra bunu yazdım&quot;;
+	color: red;
+	margin-left: 4px;
+}
+
+.text::after{
+	content: url(../images/bird.png);
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}</code></pre><h2 id="6db01abc-2b6a-4a3e-bc41-d2f82e87b6c2" class="">::before</h2><p id="8965051a-eb23-4cbc-a954-554ca6166890" class="">Bir öğenin başına ekstra içerik veya stil özellikleri eklemek için kullanılır.</p><pre id="1f4cff4c-faa5-4ace-b254-e6a05d6290bd" class="code"><code>&lt;p class=&quot;text&quot;&gt;Buraya herhangi bir metin girdim&lt;/p&gt;
+
+.text::before{
+	content: &quot;Metinden önce bunu yazdım&quot;;
+	color: red;
+	margin-left: 4px;
+}
+
+.text::before{
+	content: url(../images/bird.png);
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}</code></pre><h3 id="fa988fb9-7ea8-4538-97c8-89839edf6636" class="">::file-selector-button</h3><p id="3a5868a6-dc2a-4d7d-88f8-3a9b298bd4bc" class="">Dosya seçme butonunun stil özelliklerini değiştirmek için kullanılır.</p><pre id="7d520c7a-7461-4434-bb8d-06deb8495a14" class="code"><code>&lt;input class=&quot;fileBtn&quot; type=&quot;file&quot; name=&quot;avatar&quot; accept=&quot;image/png, image/jpeg&quot; /&gt;
+
+.fileBtn::file-selector-button {
+  background-color: black;
+  color:white;
+  border-radius: 8px;
+}
+
+/* eğer .fileBtn {..} içerisinde stil işlemleri yaparsak bu butonu etkilemez
+butonun yanındaki &quot;Dosya seçiniz&quot; yazısının stilini etkiler. Button tasarımı için
+::file-selector-button özelliğini kullanmamız gerekir. */</code></pre><h3 id="e324479c-198a-4e91-8914-3e26b59dd1a1" class="">::first-letter</h3><p id="8febc4a7-9655-4066-b9d4-5e10ae338e4e" class="">Bir öğenin ilk satırının ilk karakterinin stil özelliğini değiştirmek için kullanılır. Sadece text ögeleri için geçerlidir ve ilk eleman text olmalıdır.</p><pre id="4d984f74-5e9d-4833-8f04-4bb7be1e5c92" class="code"><code>&lt;p class=&quot;text&quot;&gt;Buraya herhangi bir metin girdim&lt;/p&gt;
+
+/* B karakterine aşağıdaki stilleri uygular */
+.text::first-letter {
+	color: red;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* ilk p etiketindeki ilk karakter &quot;L&quot; ilgili stilleri uygular */
+&lt;div class=&quot;text&quot;&gt;
+  &lt;p&gt;Lorem ipsum dolor sit&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit&lt;/p&gt;
+&lt;/div&gt;</code></pre><h3 id="c905d0e6-e529-40ee-a326-4722f3ff7d98" class="">::first-line</h3><p id="8e8eaeb2-061d-400e-be65-0068c9e6098a" class="">Bir öğenin ilk satırına ilgili stilleri uygular.</p><pre id="5ca8b9b2-2a6f-43a5-b98a-94dc6484f09a" class="code"><code>/* ilk p etiketindeki ilk karakter &quot;L&quot; ilgili stilleri uygular */
+&lt;div class=&quot;text&quot;&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, 
+     doloremque eius ipsam laborum modi numquam quos reprehenderit. 
+     Accusantium cum, dolore dolorum earum esse facilis, hic necessitatibus
+     odit pariatur recusandae vitae.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit&lt;/p&gt;
+&lt;/div&gt;
+
+/* ilk satıra ilgili stilleri uygular */
+.text::first-letter {
+	color: red;
+	font-size: 28px;
+	font-weight: bold;
+}
+</code></pre><h3 id="d18f6636-12e4-448c-a934-efb077fc3815" class="">::marker</h3><p id="c4b8ba68-dcdd-45a7-8d74-5703694bccff" class="">li elementlerinin önüne ifade eklememizi veya var olan içeriği stillendirmemizi sağlar. Sadece liste elemanlarında çalışır.</p><pre id="41177204-696c-4155-82b6-8156408e7f90" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+    &lt;li class=&quot;list-item-1&quot;&gt;test 1&lt;/li&gt;
+    &lt;li class=&quot;list-item-2&quot;&gt;test 2&lt;/li&gt;
+    &lt;li class=&quot;list-item-3&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+.list-item-1::marker {
+  content: &quot;1=&quot;;
+  color: red;
+}
+/* zaten bir içerik var ise bunu stillendirebiliriz */
+.list-item-1::marker {
+  color: red;
+	background-color: blue;
+}</code></pre><h3 id="d54d8e27-4576-42db-ab79-d291337fe647" class="">::placeholer</h3><p id="d56eaa47-67b1-40d5-a45b-5a1f9ee5a40a" class="">input ve textarea gibi elementlerde tanımlanan placeholder text ‘inin stil özelliklerini belirtmemizi sağlar. placeholder ‘ı html etiketinde tanımladıktan sonra stil işlemleri uygulayabiliriz.</p><pre id="6f8e2d02-2f0d-4655-bac7-1a744e45f82e" class="code"><code>&lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot;&gt;
+
+.input::placeholder{
+  color:red;
+	font-weight: bold;
+}</code></pre><h3 id="2a07aa31-9846-46ff-99de-ad349569af24" class="">::selection</h3><p id="8b40f41b-26e8-490e-9438-7a713e5d5030" class="">Kullanıcı tarafından bir metin seçildiğinde, seçilen metine stil özellikleri uygulamamızı sağlar.</p><pre id="bc15c763-f5f9-4022-ae9e-78602d6736f3" class="code"><code>&lt;p class=&quot;text&quot;&gt;Buraya herhangi bir metin girdim&lt;/p&gt;
+
+.text::selection {
+	color: black;
+  background-color: #EBB02D;
+}</code></pre><h2 id="cd91d179-a5a4-475b-8af7-20ee92bfd72b" class="">Selectors</h2><h3 id="6cfb59b6-96e5-4d47-99aa-ef51d072fe40" class="">:active</h3><p id="0f43e284-0b8b-4f73-a3b0-544b223bd825" class="">Kullanıcı bir elementin üzerine tıkladığında çalışır.</p><pre id="f395a705-c591-4f29-804e-c7ea0b195c19" class="code"><code>button:active {
+	color: red;
+}</code></pre><h3 id="92740da9-ef15-43e7-96a0-e735622f9ff1" class="">:any-link</h3><p id="29d1d268-a546-4749-b4a7-d7529afe4e8f" class="">Bir öğede herhangi bir yönlendirici (href) var ise aktifleşir. Genellikle a etiketleri için kullanılır.</p><pre id="593b9a8f-3b56-41df-a43e-bad87adf972b" class="code"><code>&lt;a class=&quot;link&quot; href=&quot;#&quot;&gt;Burası bir link&lt;/a&gt;
+
+/* href özelliği olan tüm a etiketlerine stil verdik */
+a:any-link {
+	color: blue;
+	text-decoration: underline;
+}</code></pre><h3 id="89cd0424-ef22-423b-8c92-1b59549f23c3" class="">:autofill</h3><p id="45e0c8a6-a00c-41e2-9eab-230f07baa2c0" class="">İnput elementlerinde tarayıcıda kayıtlı kullanıcı bilgilerinin otomatik doldurulması durumunda çalışır. Not: Kullanıcı input ‘da bir değişiklik yaparsa stiller kaldırılır.</p><pre id="be1950c1-4e2b-4d53-adc1-52bc2793835e" class="code"><code>&lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot;&gt;
+
+/* Eğer kullanıcı bilgileri tarayıcıda kayıtlı ise ve kullanıcı bu alanları otomatik
+doldurdu ise ilgili input elementlerinde stil uygulanır */
+input:autofill {
+	color: gray;
+	background-color: green;
+}
+/* bu özelliği tarayıcı destekli kullanmak daha faydalı olacaktır */
+input:-webkit-autofill {
+	color: gray;
+	background-color: green;
+}</code></pre><h3 id="2dc28bd4-f7f2-4173-b2c0-2052e8640996" class="">:checked</h3><p id="7fbe191f-6a72-4538-9672-1a1521770eb8" class="">Checkbox veya radio gibi input elementleri eğer işaretldi ise (checked) , ilgili stiller uygulanır.</p><pre id="f65b6fe3-092a-4f3d-8633-cba348b2b2df" class="code"><code>&lt;input type=&quot;checkbox&quot; name=&quot;active&quot; id=&quot;check&quot;&gt;
+
+/* checkbox her stil &#x27;i kabul etmez, bu checkbox ile ilgili bir durumdur */
+input:checked {
+  outline: 2px solid black;
+}</code></pre><h3 id="802b14fd-a959-4a2d-9587-32770783ce1d" class="">:default</h3><p id="ee031a2a-d301-4c99-927e-c0772a6aad5a" class="">Form elementlerinde default olarak tanımlanan değeri olan elementleri seçer.</p><pre id="0477b9fc-8588-434e-8bc3-2750fd93d5eb" class="code"><code>&lt;input type=&quot;checkbox&quot; name=&quot;active&quot; id=&quot;check&quot; checked&gt;
+
+/* inputlarda default olarak tanımlanmış değeri olan tüm elemanları seçer */
+input:default {
+  border: none;
+  outline: 2px solid deeppink;
+}</code></pre><h3 id="80ec23b0-5aaf-4eef-b469-c61c47ae3d6d" class="">:disabled</h3><p id="d8ef4850-17cc-4fad-bf19-930e00746673" class="">Bir form öğesi devre dışı bırakılmış, seçilemiyorsa, üzerine tıklanamıyorsa, içine yazılamıyorsa veya odak kabul edemiyorsa devre dışı kabul edilir ve devre dışı edilmiş elementleri seçer.</p><pre id="50b793a3-dd40-4b2d-ba21-09b690c435d7" class="code"><code>&lt;input type=&quot;checkbox&quot; name=&quot;active&quot; id=&quot;check&quot; disabled&gt;
+
+input:disabled {
+  outline: 2px solid red;
+}</code></pre><h3 id="4e777cb8-bbd6-48c4-afc7-a1a92f1bbf9c" class="">:enabled</h3><p id="75bbc917-19f6-4792-b3bc-8125751ea26c" class="">Bir form öğesi etkin ise , seçilebiliyor, üzerine tıklanıyor, içine yazılıyor veya odak kabul ediyor ise etkin kabul edilir ve etkin elementleri seçer. (<code>:disable</code> nin tersi)</p><pre id="757cb441-d259-4506-a3c2-568bc3d853a3" class="code"><code>&lt;input type=&quot;checkbox&quot; name=&quot;active&quot; id=&quot;check&quot;&gt;
+
+input:enabled{
+  outline: 2px solid blue;
+}</code></pre><h3 id="208b13b7-6414-4515-8d03-7b710c989f68" class="">:empty</h3><p id="d1117a0a-f331-4231-a75d-961cc0b50aef" class="">İçeriği boş olan elementleri seçer. Bir elementin altında boşta olsa bir element var ise o elementi dolu kabul eder. Boşluk karakteri olan elementleri de dolu kabul eder.</p><pre id="77e49827-9b3e-4ea1-8256-e75da7bb011b" class="code"><code>div:empty {
+	height: 20px;
+  width: 400px;
+  border: 2px solid red;
+}
+
+&lt;div&gt;&lt;/div&gt;  /* empty element */
+
+&lt;div&gt;
+	&lt;p&gt;&lt;/p&gt;  /* no empty element */
+&lt;/div&gt;  
+
+&lt;div&gt;    &lt;/div&gt;  /* no empty element (spaces) */</code></pre><h3 id="dd69c247-5b8d-461a-be1f-2f0977fe797e" class="">:first-child</h3><p id="00acf992-c9c3-4c40-94c8-88c7d71f3749" class="">Bir grup kardeş öğe arasından ilk öğeyi seçer. Önemli : bu seçicide kardeş öğelerin hepsinin aynı etikete sahip olması gerekir.</p><pre id="76c5d0c8-e4d9-4b2f-b67f-5fe66c743665" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* list-items class &#x27;ının altındaki tüm li etiketlerinden ilk öğeyi seçiyorum */
+.list-items &gt; .list-item:first-child {
+  color: red;
+}
+
+&lt;ul class=&quot;list-items&quot;&gt;
+	&lt;span &gt;bu span etiketi&lt;/span&gt;
+  &lt;p&gt;bu p etiketi&lt;/p&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* bu çalışmaz çünkü alt elemanların hepsi li öğesi olmalıdır */
+.list-items &gt; li:first-child {
+  color: red;
+}</code></pre><h3 id="95caf086-88a5-414c-976b-56468dc2506b" class="">:first-of-type</h3><p id="a1c09aef-f1ed-4eb9-8903-d593397cb24a" class=""><code>:first-child</code> ‘daki alt ögelerin hepsinin aynı olması sorununu ortadan kaldırarak sadece ilgili elementlerin ilk elemanını seçer. Alt öğeler farklı olsa bile.</p><pre id="8d90f3eb-8891-42f2-b77f-6eaf182f9696" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+	&lt;span &gt;bu span etiketi&lt;/span&gt;
+  &lt;p&gt;bu p etiketi&lt;/p&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* .list-items &#x27;in altındaki sadece li elementlerindeki ilk öğeyi seçiyorum */
+.list-items &gt; li:first-of-type {
+  color: red;
+}</code></pre><h3 id="cbe9baf4-7106-4a8e-9e82-7cf56a8fb637" class="">:last-child</h3><p id="21791d04-902d-4a9b-a286-3ab0d6305131" class="">Bir grup kardeş öğe arasından son öğeyi seçer. Önemli : bu seçicide kardeş öğelerin hepsinin aynı etikete sahip olması gerekir.</p><pre id="a53c85b5-f9d6-448d-8e7c-a6174bf7fd03" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* list-items class &#x27;ının altındaki tüm li etiketlerinden ilk öğeyi seçiyorum */
+.list-items &gt; .list-item:last-child {
+  color: red;
+}
+
+&lt;ul class=&quot;list-items&quot;&gt;
+	&lt;span &gt;bu span etiketi&lt;/span&gt;
+  &lt;p&gt;bu p etiketi&lt;/p&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* bu çalışmaz çünkü alt elemanların hepsi li öğesi olmalıdır */
+.list-items &gt; li:last-child {
+  color: red;
+}</code></pre><h3 id="66b77121-2841-42e3-a088-8e2c6ddf2b54" class="">:last-of-type</h3><p id="bfc13955-afd3-41fe-9b52-477585fc7647" class=""><code>:last-child</code> ‘daki alt ögelerin hepsinin aynı olması sorununu ortadan kaldırarak sadece ilgili elementlerin son elemanını seçer. Alt öğeler farklı olsa bile.</p><pre id="906ba884-5d71-4409-ae8f-2adbd0d9094b" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+	&lt;span &gt;bu span etiketi&lt;/span&gt;
+  &lt;p&gt;bu p etiketi&lt;/p&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+&lt;/ul&gt;
+
+/* .list-items &#x27;in altındaki sadece li elementlerindeki ilk öğeyi seçiyorum */
+.list-items &gt; li:last-of-type {
+  color: red;
+}</code></pre><h3 id="5c79b674-d018-4a18-8187-a4a882e3a0f4" class="">:nth-child</h3><p id="9840bf89-4849-4620-b503-119aa2d19117" class="">İlgili elementin kardeş elementlerini baştan başlayarak index sırasına göre seçer.<strong> 
+Not:</strong> Altında birbirinden farklı etikette öğeler var ise doğru seçim için <code>:nth-of-type</code> kullan.</p><pre id="79faf791-b261-459e-b601-7035f2255070" class="code"><code>&lt;ul class=&quot;custom-list&quot;&gt;
+	&lt;li&gt;İtem 1&lt;/li&gt;
+  &lt;li&gt;İtem 2&lt;/li&gt;
+  &lt;li&gt;İtem 3&lt;/li&gt;
+  &lt;li&gt;İtem 4&lt;/li&gt;
+  &lt;li&gt;İtem 5&lt;/li&gt;
+  &lt;li&gt;İtem 6&lt;/li&gt;
+  &lt;li&gt;İtem 7&lt;/li&gt;
+  &lt;li&gt;İtem 8&lt;/li&gt;
+  &lt;li&gt;İtem 9&lt;/li&gt;
+  &lt;li&gt;İtem 10&lt;/li&gt;
+&lt;/ul&gt;
+
+/* li öğelerinden 2. sıradaki */
+.custom-list &gt; li:nth-child(2) {
+  background-color: #EBB02D;
+}
+
+/* li öğelerinden çift sayıdakiler (item 2,4,6,8,10, bu seçim index numarasına göre)*/
+.custom-list &gt; li:nth-child(event) {
+  background-color: #EBB02D;
+}
+
+/* li öğelerinden tek sayıdakiler (item 1,3,5,7,9 bu seçim index numarasına göre)*/
+.custom-list &gt; li:nth-child(odd) {
+  background-color: #EBB02D;
+}
+
+/* sayısal işlemler ise kardeş öğe seçimi */
+/* n değeri 0 dan başlayarak sonsuza kadar tüm pozitif tam sayıları içerir (0,1,2...)*/
+.custom-list &gt; li:nth-child(n) {
+  background-color: #EBB02D;
+}
+/* [2*0 = 0],[2*1=2],[2*2=4] .. şeklinde çift sayıları temsil eder */
+.custom-list &gt; li:nth-child(2n) {
+  background-color: #EBB02D;
+}
+
+/* [5*0 = 0],[5*1=5],[5*2=10] .. şeklinde 5 in katlarını temsil eder */
+.custom-list &gt; li:nth-child(5n) {
+  background-color: #EBB02D;
+}</code></pre><h3 id="f9f0899b-2ba5-4e6f-9676-b1676da51f9a" class="">:nth-last-child</h3><p id="a5bf7c36-d253-4036-bf3f-f7f9dd406a11" class="">İlgili elementin kardeş elementlerini sondan başlayarak index sırasına göre seçer. Ters.</p><pre id="82a9cf6d-938a-44e6-b07a-e9c96dd326af" class="code"><code>&lt;ul class=&quot;custom-list&quot;&gt;
+	&lt;li&gt;İtem 1&lt;/li&gt;
+  &lt;li&gt;İtem 2&lt;/li&gt;
+  &lt;li&gt;İtem 3&lt;/li&gt;
+  &lt;li&gt;İtem 4&lt;/li&gt;
+  &lt;li&gt;İtem 5&lt;/li&gt;
+  &lt;li&gt;İtem 6&lt;/li&gt;
+  &lt;li&gt;İtem 7&lt;/li&gt;
+  &lt;li&gt;İtem 8&lt;/li&gt;
+  &lt;li&gt;İtem 9&lt;/li&gt;
+  &lt;li&gt;İtem 10&lt;/li&gt;
+&lt;/ul&gt;
+
+/* li öğelerinden sondan 2. sıradaki (İtem 9) */
+.custom-list &gt; li:nth-last-child(2) {
+  background-color: #EBB02D;
+}
+</code></pre><h3 id="114457f9-533b-42c9-a115-e5627de18e3a" class="">:nth-of-type</h3><p id="ad9c639c-0018-42ac-bff2-9b69dfc4874e" class="">Eğer bir elementin altındaki elementler farklı etiketlerde ise <code>:nth-child</code> doğru çalışmaz. Bu soruna çözüm olarak <code>nth-of-type</code> ile sadece ilgili etiketler arasında sıralamaya göre seçim yapar.</p><pre id="305b8acf-7103-40c2-8d34-03f8cdbc864e" class="code"><code>&lt;ul class=&quot;custom-list&quot;&gt;
+	&lt;li&gt;İtem 1&lt;/li&gt;
+  &lt;li&gt;İtem 2&lt;/li&gt;
+  &lt;li&gt;İtem 3&lt;/li&gt;
+  &lt;li&gt;İtem 4&lt;/li&gt;
+		&lt;ul&gt;
+      &lt;li&gt;İtem 4.1&lt;/li&gt;
+      &lt;li&gt;İtem 4.2&lt;/li&gt;
+      &lt;li&gt;İtem 4.3&lt;/li&gt;
+      &lt;li&gt;İtem 4.4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;li&gt;İtem 5&lt;/li&gt;
+  &lt;li&gt;İtem 6&lt;/li&gt;
+  &lt;li&gt;İtem 7&lt;/li&gt;
+  &lt;li&gt;İtem 8&lt;/li&gt;
+  &lt;li&gt;İtem 9&lt;/li&gt;
+  &lt;li&gt;İtem 10&lt;/li&gt;
+&lt;/ul&gt;
+
+/* İtem 4 ile İtem 8 &#x27;i seçecektir.
+.custom-list &gt; li:nth-of-type(4n) {
+  background-color: #EBB02D;
+}</code></pre><h3 id="cae75d94-abf4-4609-a89b-7747205c9110" class="">:only-child</h3><p id="99a3f7ec-b74e-4736-ba08-2a875fa7fdc0" class="">İlgili elementin altında sadece 1 çocuk öğe var ise seçer.</p><pre id="c0a625c4-38fc-462f-95a9-b9ff3a56c6ed" class="code"><code>&lt;ul&gt;
+	&lt;li&gt;İtem 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;İtem 3&lt;/li&gt;
+	&lt;li&gt;İtem 4&lt;/li&gt;
+&lt;/ul&gt;
+
+/* ul etiketlerinden sadece 1 çocuğu olanın, çouğuna (li) ilgili stili uygular,
+yani burada İtem 1 &#x27;in arkaplanını değiştirir.*/
+ul &gt; :only-child {
+  background-color: #EBB02D;
+}</code></pre><h3 id="45b5629a-a9c8-408c-b72d-c0f6d6a48d15" class="">:focus</h3><p id="72f2c38f-a281-49fd-b9c6-537c2bd3d158" class="">Kullanıcı bir öğeye odaklandığında çalışır. Form elementlerinde kullanışlıdır.</p><pre id="4b18d43f-36e3-4756-a979-28694f3e1981" class="code"><code>&lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+
+input:focus {
+  background-color: red;
+}</code></pre><h3 id="71792e92-a959-4a35-a799-22f729ce0d86" class="">:focus-visible</h3><p id="05ca246a-549c-4e9b-a031-da9c62911c55" class="">Fare veya işaretçi ile değil de klavye ile gezinirken bir öğeye odaklandığında çalışır.</p><pre id="ff4ced94-d7db-43aa-b7bd-26188d343a6d" class="code"><code>&lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+
+input:focus-visible {
+  background-color: blue;
+}</code></pre><h3 id="d5fa2ada-1831-467f-9055-4d635b02d10f" class="">:focus-within</h3><p id="7e93e942-8c68-4672-8d23-8d14a77ba815" class="">Kullanışlı ! Bir kapsayıcı öğenin alt öğelerinden birine odaklandığında kapsayıcı öğeyi seçmeyi sağlar.</p><pre id="ecae8657-ab02-4c0c-aaa1-c23657d3315a" class="code"><code>&lt;div class=&quot;container&quot;&gt;
+	&lt;p&gt;ileri seviye css öğreniyorum&lt;/p&gt;
+	&lt;span&gt;github &#x27;dan burakkrt &#x27;yi takip etmeyi unutma :)&lt;/span&gt;
+	&lt;input type=&quot;text&quot;&gt;
+&lt;/div&gt;
+
+/* container class &#x27;ının altındaki harhangi bir öğeye odaklanma durumunda
+.container &#x27;e stil özellikleri uygular */
+
+.container:focus-within {
+	background-color: yellow;
+}</code></pre><h3 id="157930b1-17ea-43ce-abf3-424526961a87" class="">:hover</h3><p id="f44c103a-2fb1-4e5f-992d-cb15248c4ea8" class="">İlgili öğenin herhangi bir işaretçi ile üzerine gelindiğinde stil uygular.</p><pre id="9dd66013-41cc-4b47-9cb1-19bca2a72663" class="code"><code>&lt;p&gt;burası bir p etiketidir&lt;/p&gt;
+
+p:hover{
+	color: red;
+}</code></pre><h3 id="f97c0f31-7c1a-41b0-ac8c-27e8458719e0" class="">:in-range</h3><p id="a743a80f-588f-4a3d-936a-cbdba531b6d1" class="">Form elementlerinde belirtilen değer tanımlanan min ve max ‘değer aralığında ise yani karşılıyor ise stil uygular.</p><pre id="ecccab1b-59bb-41d8-870c-4c61c9348cb1" class="code"><code>&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot;  /&gt;
+
+input {
+	backgorun-color: red;
+}
+/* eğer girilen değe 1 ile 100 arasında ise ilgili stil uygulanır */
+input:in-ranger {
+	background-color: green;
+}</code></pre><h3 id="d2df3691-3e1b-4be4-98f2-a9393813492f" class="">:out-of-range</h3><p id="5761f436-1e05-458f-a9f4-0534b0dd576f" class="">Form elementlerinde belirtilen değer tanımlanan min ve max ‘değer aralığının dışında ise stil uygular.</p><pre id="5b717cb0-6b67-4c1a-a498-f38d3099c090" class="code"><code>&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot;  /&gt;
+
+input {
+	backgorun-color: red;
+}
+/* eğer girilen değe 1 ile 100 arasında değil ise ilgili stil uygulanır */
+input:out-of-range {
+	background-color: green;
+}</code></pre><h3 id="6658ee08-6a10-4721-99ca-8985dfd78521" class="">:invalid</h3><p id="be669da9-3129-4a5c-9430-80019af0af45" class="">Form elementlerinde belirtilen değer tanımlanan min ve max ‘değer aralığında değilse yani karşılamıyor ise stil uygular. <code>:in-range</code> ‘nin tersi.</p><pre id="ccf38a0c-d9a9-43e5-b606-4ce6830976a5" class="code"><code>&lt;input name=&quot;age&quot; type=&quot;number&quot; value=&quot;5&quot; min=&quot;18&quot; /&gt;
+&lt;input name=&quot;secret&quot; type=&quot;text&quot; value=&quot;test&quot; pattern=&quot;[a-z]+&quot; /&gt;
+
+input:invalid {
+	outline: 2px solid red;
+}</code></pre><h3 id="6f27cfde-d2a5-4a11-b7b1-e671dfdf61d6" class="">:is</h3><p id="631a4545-b06d-4430-a5ba-c8a653fca7f1" class="">Belirli bir öğenin altındaki öğeleri seçmemizi sağlar. :first-of-type ‘dan daha kullanışlı ve yazımı rahattır.</p><pre id="27efd61d-f17a-4707-8084-f732f927829e" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+    &lt;span &gt;bu span etiketi&lt;/span&gt;
+    &lt;p&gt;bu p etiketi&lt;/p&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+    &lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+&lt;/ul&gt;
+
+/* list-items altındaki elemanlardan etiketi li veya p olan elementleri seçer */
+.list-items &gt; :is(li,p) {
+	border: 1px solid red;
+}
+
+&lt;div class=&quot;container&quot;&gt;
+	&lt;div&gt;
+		&lt;p&gt;beni github &#x27;dan takip etmeyi unutma&lt;/p&gt;
+	&lt;/div&gt;
+  &lt;ul class=&quot;list-items&quot;&gt;
+    &lt;span &gt;bu span etiketi&lt;/span&gt;
+    &lt;p&gt;bu p etiketi&lt;/p&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+    &lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+/* container altındaki elementlerden class &#x27;ı list-items olanın altındaki 
+tüm p ve li etiketlerini seçer */
+.container &gt; :is(.list-items) &gt; :is(p, li) {
+  border: 1px solid red;
+}</code></pre><h3 id="1900af07-4bd1-4674-8373-703eca1110c9" class="">:where</h3><p id="4aa12d16-6c7a-4a67-bb39-0b74afe8ab28" class="">:is ile aynı özelliktedir, birden çok seçiciyi bir arada tanımlar.</p><pre id="10a7b3c6-a9e3-4be6-b046-30555b64eeff" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+    &lt;span &gt;bu span etiketi&lt;/span&gt;
+    &lt;p&gt;bu p etiketi&lt;/p&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+    &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+    &lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+&lt;/ul&gt;
+
+/* list-items in altındaki tüm span ve p etiketlerini seçer ve stil uygular */
+.list-items &gt; :where(p,span){
+	color: red;
+}</code></pre><h3 id="980eb128-7799-4008-899a-0b957b0437b7" class="">:not</h3><p id="fc8689b4-b4a2-4ee8-9749-2bea1d4b4c82" class="">İlgili element ile eşleşmeyen diğer tüm elementleri seçer.</p><pre id="535cd4ff-638f-49d0-840a-ed973aa7533c" class="code"><code>&lt;ul class=&quot;list-items&quot;&gt;
+  &lt;span&gt;bu span etiketi&lt;/span&gt;
+  &lt;p&gt;bu p etiketi&lt;/p&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 1&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 2&lt;/li&gt;
+  &lt;li class=&quot;list-item&quot;&gt;test 3&lt;/li&gt;
+  &lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;isim giriniz&quot; &gt;
+&lt;/ul&gt;
+
+/* list-items altındaki li elementi hariç tüm öğeleri seçer */
+.list-items &gt; :not(li) {
+  color: yellow;
+}
+
+/* birden çok etiket, class, id belirtilebilir */
+.list-items &gt; :not(span, .list-item) {
+  color: yellow;
+}
+
+/* ayrı ayrı da belirtilebilir */
+.list-items &gt; :not(span):not(li) {
+  color: yellow;
+}</code></pre><h3 id="bc8539df-81cb-43f8-b98b-fa71e6c4fb6b" class="">:lang</h3><p id="966b8c8f-bcf6-4565-a17a-ddd6fedf77d4" class="">Html etiketlerinde belirtilmiş dilleri olan elementlere seçmemizi sağlar. Not: &lt;html lang=”tr-TR”&gt; tanımlanmış ise altındaki tüm öğelere stil uygular çünkü tüm sayfa tr-TR olarak tanımlanmıştır. Fakat sadece belirli etiketlere farklı lang etiketi uygulanmış ise sadece o elementlere stil uygular.</p><pre id="0da0e25e-94a1-4234-a78c-9e823c60d64c" class="code"><code>&lt;p lang=&quot;en-US&quot;&gt;Hello, my name is Burak. I am a developer.&lt;/p&gt;
+&lt;p lang=&quot;tr-TR&quot;&gt;Selam, benim adım Burak. Ben bir geliştiriciyim.&lt;/p&gt;
+
+*:lang(tr-TR){
+	color: red;
+}
+
+*:lang(en-US){
+	color: blue;
+}</code></pre><h3 id="fa4af4db-090e-46b0-83f7-662b44ce26cd" class="">:link</h3><p id="11630d59-cfb0-4c85-930d-9fbf576d5f2e" class="">Henüz ziyaret edilmemiş bağlantıları seçer.</p><pre id="9bf72360-540a-493d-ae05-b86b61d7afd7" class="code"><code>&lt;a href=&quot;#&quot;&gt;Click me&lt;/a&gt;
+
+/* henüz tıklanmadı ise uygular */
+a:link {
+	color: blue;
+}</code></pre><h3 id="b4f72c55-65fa-425d-9c27-ac13300c0a46" class="">:visited</h3><p id="5dea0f76-7155-49a1-9c99-930fef108eed" class="">Eğer bağlantı ziyaret edilmiş (açılmış) ise.</p><pre id="583db271-aead-4c55-bd3f-4d07a438d903" class="code"><code>&lt;a href=&quot;#&quot;&gt;Click me&lt;/a&gt;
+
+/* ziyaret edildikten sonra */
+a:link {
+	color: grey;
+}</code></pre><h3 id="55d7b03d-8074-406f-b30e-dc8f1f963556" class="">:optional</h3><p id="d64cd285-8a1c-4cb4-9b86-118d5c9e780f" class="">Form elementlerinde bir form elementine içerik girmesini zorunlu kılmak için <code>required</code> (zorunlu) terimini etiket içerisinde belirtiriz. Zorunlu olmayan öğeleri seçer.</p><pre id="e1662063-a0e0-43d2-97ac-3814d65dd78a" class="code"><code>&lt;form&gt;
+	&lt;input name=&quot;name&quot; type=&quot;text&quot; required /&gt;
+	&lt;input name=&quot;birth&quot; type=&quot;date&quot; /&gt;
+	&lt;select name=&quot;origin&quot; required&gt;
+    &lt;option&gt;Google&lt;/option&gt;
+    &lt;option&gt;Facebook&lt;/option&gt;
+    &lt;option&gt;Advertisement&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+
+/* form öğesinin altındaki zorunlu olmayan elementeri seçer */
+form &gt; :optional {
+	border: 2px solid grey;
+}</code></pre><h3 id="5dfea072-7697-4069-8640-f7ab90180a37" class="">:required</h3><p id="6edbc793-6ad9-493c-84f1-4514e517dab5" class="">Form elementlerinde bir form elementine içerik girmesini zorunlu kılmak için <code>required</code> (zorunlu) terimini etiket içerisinde belirtiriz. Sadece zorunlu öğeleri seçer.</p><pre id="b2b5b5c8-afbd-4fdc-8b27-179bf864abc4" class="code"><code>&lt;form&gt;
+	&lt;input name=&quot;name&quot; type=&quot;text&quot; required /&gt;
+	&lt;input name=&quot;birth&quot; type=&quot;date&quot; /&gt;
+	&lt;select name=&quot;origin&quot; required&gt;
+    &lt;option&gt;Google&lt;/option&gt;
+    &lt;option&gt;Facebook&lt;/option&gt;
+    &lt;option&gt;Advertisement&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+
+/* form öğesinin altındaki zorunlu elementeri seçer */
+form &gt; :required{
+	border: 2px solid grey;
+}</code></pre><h3 id="b4adf1da-f226-4396-a07b-c103795c688a" class="">:placeholder-shown</h3><p id="f2f61d5d-8143-4b33-a076-ca5ca0594db9" class="">Form elementlerinde placeholder öğesini görüntüleyen öğeleri seçer. Kullanıcı değer girmeye başladığı an stiller kaldırılır.</p><pre id="32456f34-881b-4fdf-89c0-14d70e72e8e3" class="code"><code>&lt;input type=&quot;number&quot; placeholder=&quot;Bir sayı girin&quot; &gt;
+
+/* placeholder bulunan öğelere ilgili stili uygular. Eğer kullanıcı inputa değer
+girmeye başlarsa placeholder text &#x27;i kaybolacağı için stiller de kaldırılır.
+İnput içeriğini temizler&amp;siler ise placeholder tekrar gözükeceğinden stillerde
+tekrar yüklenir */
+:input:placeholder-shown{
+	outline: 2px solid orange;
+}</code></pre><h3 id="2dfd3a1c-9a81-4742-a190-44937f5ae519" class="">:ready-only</h3><p id="08596703-9dcd-43a5-8f5d-87f9d67577d1" class="">Sadece okunabilen, değer girilmeyen, değiştirilmeyen öğeleri seçer. </p><pre id="57d25686-022d-44c6-81b3-e4f39103c792" class="code"><code>&lt;div class=&quot;tt2&quot;&gt;
+  &lt;a class=&quot;a1&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;a class=&quot;a2&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;select&gt;
+    &lt;option&gt;item 1&lt;/option&gt;
+    &lt;option&gt;item 2&lt;/option&gt;
+    &lt;option&gt;item 3&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;a class=&quot;a4&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;input type=&quot;text&quot;&gt;
+	&lt;input type=&quot;checkbox&quot;&gt;
+&lt;/div&gt;
+
+/* input text ve checkbox değer girilebilir veya değiştirelebilir bunun haricinde
+a etiketi ve select &#x27;ler sadece okunabilir olduğu için, okunabilir ögeleri seçer */
+*:ready-only {
+	color: red;
+}</code></pre><h3 id="aa0e360d-97e1-4fdf-8d50-b60dd3600c87" class="">:ready-write</h3><p id="b26c3854-e836-4514-91e3-419c23d27b64" class="">Sadece değer girelebilen ve seçilen öğeleri seçer.</p><pre id="82017c6b-3ade-4f66-8d90-7b2b0b318a84" class="code"><code>&lt;div class=&quot;tt2&quot;&gt;
+  &lt;a class=&quot;a1&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;a class=&quot;a2&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;select&gt;
+    &lt;option&gt;item 1&lt;/option&gt;
+    &lt;option&gt;item 2&lt;/option&gt;
+    &lt;option&gt;item 3&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;a class=&quot;a4&quot;&gt;dasdasdas&lt;/a&gt;
+  &lt;input type=&quot;text&quot;&gt;
+	&lt;input type=&quot;checkbox&quot;&gt;
+&lt;/div&gt;
+
+/* input text ve checkbox değer girilebilir veya değiştirelebilir */
+*:ready-only {
+	color: red;
+}</code></pre><h3 id="23a6e725-6203-4a7c-a26a-7ef35fb9fb71" class="">:root</h3><p id="86955d03-356f-453d-9a26-61a8ee0eb9b3" class="">En üst kapsayıcı elemanı belirtir. Buda html elementine denktir. html elementine css değişkenlerini tanımlamak için kullanılır.</p><pre id="ffb80066-2621-43a1-a6a7-a443c1e1a7f5" class="code"><code>/* html etiketine backgorund verebiliriz ve tüm sayfanın arkaplanı değişir */
+:root {
+	backgorund-color: orange;
+}
+
+/* değişken tanımlayabiliriz ve alt öğelerde çağırabiliriz, dinamik yapı oluşur */
+:root {
+	--main-color: black;
+	--main-background: yellow;
+}
+/* color &#x27;a --main-color adındaki değişkeni tanımladık yani black */
+.box {
+	color: var(--main-color)
+}</code></pre></div></article></body></html>
