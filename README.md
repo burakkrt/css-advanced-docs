@@ -67,7 +67,8 @@ a:after {
 }
 ```
 
-![Opera Anlık Görüntü_2023-09-16_144348_devdocs.io.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-16_144348_devdocs.io.png)
+![Opera Anlık Görüntü_2023-09-16_144348_devdocs io](https://github.com/burakkrt/css-advanced-docs/assets/99482906/2dd3c78e-d353-49dd-aa7b-8458dd35d39a)
+
 
 ### background-attachment
 
