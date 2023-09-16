@@ -17,9 +17,66 @@ border-radius: 100px / 200px
 ![2](https://github.com/burakkrt/css-advanced-docs/assets/99482906/0a6ea644-4c84-4381-8291-8cb623204863)
 
 
-### display: inline-flex
+### linear-gradient
 
-display: flex ‘den çok bir farkı yoktur. Ögeleri yan yana (row içeriside) sıralamak için kullanılır. Yatay olarak sıralar, taşma yapıyorsa overflow-hidden gibi taşırır, alt satıra geçmez. jusitfy-content, align-items gibi flex özellikleri kullanılabilir.
+İki veya daha fazla renk arasında aşamalı bir geçişten oluşan özel bir <image> türüdür
+
+```css
+background-image: linear-gradient(yönü, renk1, renk2 ...);
+/* default yukarıdan aşağıya doğru renk geçişleri */
+background-image: linear-gradient(red,blue);
+
+/* 4 farklı yöne doğru renk geçişi */
+background-image: linear-gradient(to right,red,blue);
+background-image: linear-gradient(to left,red,blue);
+background-image: linear-gradient(to top,red,blue);
+background-image: linear-gradient(to bottom,red,blue);
+
+/* sağ aşağıya doğru biten */
+background-image: linear-gradient(to bottom right,red,blue);
+/* sol yukarıya doğru biten */
+background-image: linear-gradient(to top left,red,blue);
+```
+
+### attr
+
+Bir öğenin herhangi bir attribute ‘unu css ‘de kullanmamızı sağlar.
+
+```css
+<a href="#" aciklama="bu bir a etiketidir">Hello my button</a>
+
+/* a etiketinin after ile sonrasına bir element ekliyorum ve içeriğini
+a etiketinin aciklama adındaki attributunu yazdırıyorum, ister class, ister
+style gibi istebilen attribute 'yi alabiliriz */
+a:after {
+	content: ' 'attr(aciklama)' ';
+	color: red;
+}
+```
+
+### background-blend-mode: multipy
+
+Üst üste konumlandırılan iki veya daha fazla arkaplanın, renklerinin karıştırılması sonucu ortak bir rengin ortaya çıkmasıdır. Özellikle bir resim ile arkaplan rengini birleştirmede oldukça kullanışlıdır.
+
+```css
+#div {
+  width: 300px;
+  height: 300px;
+  background: url("br.png"), url("tr.png");
+  background-blend-mode: multiply;
+}
+```
+
+![Opera Anlık Görüntü_2023-09-16_144348_devdocs.io.png](Css%20ae4f4567b42b45d29b4a8fd64e4e4fd7/Opera_Anlk_Grnt_2023-09-16_144348_devdocs.io.png)
+
+### background-attachment
+
+Bir arka plan görüntüsünün konumunun görüntü alanı içinde sabit olup olmayacağını veya içeren blokla birlikte kaydırılıp kaydırılmayacağını belirler.
+
+```css
+/* scroll 'y kaydırsak bile arkaplan sabit kalır, güzel bir görünüm */
+background-attachment: fixed;
+```
 
 ### filter: blur()
 
