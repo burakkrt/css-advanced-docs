@@ -359,12 +359,14 @@ durumlarında vereceği sonuçları içerir.  */
 /* Tarayıcı, performans ve görüntü kalitesi arasında bir denge sağlamaya çalışır.  */
 image-rendering: auto;
 
-/* Resmin daha net ve pikselsiz görüntülenmesini sağlar. (İlk resim)  */
-image-rendering: crisp-edges;
-
-/* Pikselli bir görünümle büyütmeyi veya küçültmeyi sağlar. (İkinci resim)
+/* Pikselli bir görünümle büyütmeyi veya küçültmeyi sağlar. (İlk resim)
 Bu genellikle retro tarzda görüntüler oluşturmak için kullanılır. */
 image-rendering: pixelated;
+
+/* Resmin daha net ve pikselsiz görüntülenmesini sağlar. (İkinci resim)  */
+image-rendering: crisp-edges;
+
+
 ```
 
 ![1](https://github.com/burakkrt/css-advanced-docs/assets/99482906/7734612d-750a-49bd-bfc4-948eb4163128)
